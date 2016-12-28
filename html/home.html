@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta charset="utf-8">
+		<title></title>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+	    <link href="../css/bootstrap-reset.css" rel="stylesheet">
+	    	<!-- FontAwesome Styles-->
+    	<link href="../css/font-awesome.css" rel="stylesheet" />
+	    <!--external css-->
+	    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	    <link href="../assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+	    <link rel="stylesheet" href="../css/owl.carousel.css" type="text/css">
+	    <!-- Custom styles for this template -->
+	    <link href="../css/style.css" rel="stylesheet">
+	    <link href="../css/style-responsive.css" rel="stylesheet" />
+	    <link href="../css/base.css"/>
+	    <link rel="stylesheet" type="text/css" href="../css/styleByTimeline.css"/>
+	     <!-- 2、 引入Bootstrap 样式-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    
+		<!-- 3、引入jQuery.js (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.min.js"></script>
+    
+    <!-- 4、引入 bootstrap.js  Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    
+    <!-- 5、bootstrap table组件以及中文包的引用 -->
+    <script src="../js/bootstrap-table.js"></script>
+    <link href="../css/bootstrap-table.css" rel="stylesheet" />
+    <script src="../js/locale/bootstrap-table-zh-CN.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <!-- 6、兼容IE9以下的浏览器   -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- 7、页面Js文件的引用    -->
+    <script src="../js/index.js"></script>
+	    <!-- 5、bootstrap table组件以及中文包的引用 -->
+	     <link href="../css/bootstrap-table.css" rel="stylesheet" />
+    
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="../img/favicon.html">
+
+    <title>Form Wizard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/custom-styles.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" class="">
+      <!--中1区域 header start-->
+      <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="#" class="logo"><img src="../image/供应链金融.png"></a>
+            <!--logo end-->
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="username">小明</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
+                            <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
+                            <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+      <!--header end-->
+      <!--sidebar start-->
+      <aside>
+	      	<div id="yu">
+	      		<nav-tem :yu="yu"></nav-tem>
+	      	</div>
+      </aside>
+      <!--sidebar end-->
+      <!--main content start-->
+      <section id="main-content">
+      	 <section class="wrapper">
+              <!--中2区域 state overview start-->
+              <div class="row state-overview">
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol MyBlue">
+                              <i class="icon-edit"></i>
+                          </div>
+                          <div class="value">
+                              <h1 class="text-myBlue">22</h1>
+                              <p>待办任务</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol red">
+                              <i class="icon-map-marker"></i>
+                          </div>
+                          <div class="value">
+                              <h1 class="text-red">140</h1>
+                              <p>查询在途</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol yellow">
+                              <i class="icon-envelope-alt"></i>
+                          </div>
+                          <div class="value">
+                              <h1 class="text-yellow">345</h1>
+                              <p>未读通知</p>
+                          </div>
+                      </section>
+                  </div>
+                  <div class="col-lg-3 col-sm-6">
+                      <section class="panel">
+                          <div class="symbol blue">
+                              <i class="icon-bell"></i>
+                          </div>
+                          <div class="value">
+                              <h1 class="text-blue">34,500</h1>
+                              <p>预警通知</p>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+              <!--state overview end-->
+			  <!--中3侧2区域-->
+			  
+              <div class="row">
+                  <div class="col-lg-8">
+                  	<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+										  <div class="panel panel-default">
+										    <div class="panel-heading" role="tab" id="headingOne">
+										      <h4 class="panel-title">
+										        <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+										          	国内单笔流程图
+										        </a>
+										      </h4>
+										    </div>
+										    <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+										      <div class="panel-body">
+										      	<div class="wrapper">
+						<ul class="timeLine">
+							<li>
+								<h5 class="time"><button class="btn btn-radius btn-info" ><i class="icon-pencil" style="font-size: 25px;"></i></button><br/>登记</h5>
+							</li>
+							<li>
+								<h5 class="time"><button class="btn btn-radius btn-info" ><i class="icon-mail-forward" style="font-size: 25px;"></i></button><br/>转让</h5>
+							</li>
+							<li>
+								<h5 class="time"><button class="btn btn-radius btn-info" ><i class="icon-cny" style="font-size: 25px;"></i></button><br/>融资</h5>
+							</li>
+							<li>
+								<h5 class="time"><button class="btn btn-radius btn-info" ><i class="icon-credit-card" style="font-size: 25px;"></i></button><br/>付款</h5>
+							</li>
+						</ul>
+					  </div>
+                  
+										      </div>
+										    </div>
+										  </div>
+										  </div>
+                      </div>
+                  <div class="col-lg-4">
+                  			<!--欢迎区域 -->
+                  			 <aside class="post-highlight info v-align" style="margin-top: 20px;">
+                              <div class="panel-body">
+                              	<div style="background-image: url(../img/avatar1.jpg);height: 100px;background-repeat: no-repeat;margin-left:40%;"></div>
+                              	<h2>
+                              		<p><span>余强，</span>欢迎进入供链金融系统</p>
+                              		<p>上一次登陆时间：<span>2016-12-22  16：02</span></p>
+                              	</h2>
+                              </div>
+                          </aside>
+                  		<!--天气 start-->
+                      <section class="panel" style="margin-top: 20px;">
+                          <div class="weather-bg">
+                              <div class="panel-body">
+                                  <div class="row">
+                                      <div class="col-xs-6">
+                                        <i class="icon-cloud"></i>
+                                          California
+                                      </div>
+                                      <div class="col-xs-6">
+                                          <div class="degree">
+                                              24°
+                                          </div>
+                                      </div>
+                                  </div>
+                              </div>
+                          </div>
+
+                          <footer class="weather-category">
+                              <ul>
+                                  <li class="active">
+                                      <h5>humidity</h5>
+                                      56%
+                                  </li>
+                                  <li>
+                                      <h5>precip</h5>
+                                      1.50 in
+                                  </li>
+                                  <li>
+                                      <h5>winds</h5>
+                                      10 mph
+                                  </li>
+                              </ul>
+                          </footer>
+
+                      </section>
+                      <!--weather statement end-->
+                  </div>  
+              </div>
+             
+          </section>
+      <!--main content end-->
+  </section>
+  <!-- js placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.scrollTo.min.js"></script>
+    <script src="../js/jquery.nicescroll.js" type="text/javascript"></script>
+		
+
+
+    <!--common script for all pages-->
+    <script src="../js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    <script src="../js/jquery.stepy.js"></script>
+		<script src="../js/bootstrap-table.js"></script>
+   
+    <script src="../js/locale/bootstrap-table-zh-CN.js"></script>
+    <!-- 7、页面Js文件的引用    -->
+    <script src="../js/index.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="../js/jquery.metisMenu.js"></script>
+		<script src="../js/custom-scripts.js"></script>
+		<script src="../js/echarts-all.js"></script>
+  <script>
+
+      //step wizard
+
+      $(function() {
+      		$('#searchNoreDiv').hide();
+          $('#default').stepy({
+              backLabel: 'Previous',
+              block: true,
+              nextLabel: '下一步',
+              titleClick: true,
+              titleTarget: '.stepy-tab'
+          });
+          createTable('ta');
+		      /**
+		       * 新增的弹出窗口
+		       */
+          $('#btn_add').on('click',function(){
+          	$('#addModal').modal();
+          });
+          $('#searchContent').on('click',function(){
+          	seachCust();
+          });
+          
+          $('#searchMore').on('click',function(){
+          	changeSearchStyle()
+          });
+      });
+      
+      
+      /**
+       * 查询的弹出窗口
+       */
+      function seachCust(){
+      	$('#myModal').modal();
+      	createTable('ta');
+      }
+      
+      /**
+       * 改变查询更多条件的样式
+       */
+      function changeSearchStyle(){
+      	var i = $('#searchMore').children('i');
+          	if(i.hasClass('icon-chevron-left')){
+          		i.removeClass('icon-chevron-left');
+          		i.addClass('icon-chevron-down');
+          		$('#searchMore').children('span').html('精选筛选条件 ');
+          		$('#searchNoreDiv').show();
+          	}else{
+          		i.removeClass('icon-chevron-down');
+          		i.addClass('icon-chevron-left');
+          		$('#searchMore').children('span').html('更多筛选条件 ');
+          		$('#searchNoreDiv').hide();
+          	}
+      }
+  </script>
+  <script type="text/x-template" id="nav">
+  	 <!--/. NAV TOP  -->
+	         <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
+	            <div class="sidebar-collapse">
+	                <ul class="nav" id="main-menu">
+	
+	                    <li>
+	                        <a class="active-menu" href="home.html"><i class="fa fa-dashboard"></i> 首页</a>
+	                    </li>
+	                    <li v-for="key in yu">
+	                    	<a href="{{key.url}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
+	                    		<ul v-if="key.children!=undefined" class="nav nav-second-level">
+	                    			<li v-for="ke in key">
+	                    				 <a href="#"><i v-if="ke.children!=undefined" class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
+                            	 <ul v-if="ke.children!=undefined" class="nav nav-third-level">
+                            	 	<li v-for="k in ke">
+                            	 		<a href="{{k.url}}">k.name</a>
+                            	 	</li>	
+                            	 </ul>
+                            </li>
+	                    		</ul>
+	                    </li>
+	                    <li>
+	                        <a href="#"><i class="icon-group fa fa-desktop"></i> 客户管理<span class="fa arrow"></span></a>
+	                    		<ul class="nav nav-second-level">
+	                            <li>
+	                                <a href="#">新增</a>
+	                            </li>
+	                            <li>
+	                                <a href="#">修改</a>
+	                            </li>
+	                            <li>
+	                                <a href="#">查询</a>
+	                            </li>
+	                            <li>
+	                                <a href="#">删除</a>
+	                            </li>
+	                        </ul>
+	                    </li>
+	                    <li>
+	                        <a href="#"><i class="fa fa-sitemap"></i> 国内单笔保理<span class="fa arrow"></span></a>
+	                        <ul class="nav nav-second-level">
+	                            <li>
+	                                <a href="#"><i class="icon-pencil"></i>登记<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level">
+	                                    <li>
+	                                        <a href="#">申请</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">复核</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">退回处理</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">删除在途</a>
+	                                    </li>
+	
+	                                </ul>
+	                            </li>
+	                             <li>
+	                                <a href="#"><i class="icon-mail-forward"></i>转让<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level">
+	                                    <li>
+	                                        <a href="#">申请</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">复核</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">退回处理</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">删除在途</a>
+	                                    </li>
+	
+	                                </ul>
+	                            </li>
+	                             <li>
+	                                <a href="#"><i class="icon-cny"></i>融资<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level">
+	                                    <li>
+	                                        <a href="#">申请</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">复核</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">退回处理</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">删除在途</a>
+	                                    </li>
+	
+	                                </ul>
+	                            </li>
+	                        		  <li>
+	                                <a href="#"><i class="icon-credit-card"></i>付款<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level">
+	                                    <li>
+	                                        <a href="#">申请</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">复核</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">退回处理</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">删除在途</a>
+	                                    </li>
+	
+	                                </ul>
+	                            </li>
+	                        </ul>
+	                    </li>
+	                	<li>
+	                		<a href="#"><i class="icon-bar-chart fa fa-desktop"></i> 报表</a>
+	                	</li>
+	                </ul>
+	
+	            </div>
+	
+	        </nav>
+	         	
+	         <!-- /. NAV SIDE  -->
+  </script>
+  <script type="text/javascript">
+		Vue.component('nav-tem', {
+		  template: '#nav',
+		  props: {
+		  	yu:Array
+		  }
+		}); 
+		var data = [{
+			url:'#',
+			icon:'icon-group',
+			name:'客户管理',
+			children:[{
+				url:'#',
+				name:'新增'
+			},{
+				url:'#',
+				name:'修改'
+			},{
+				url:'#',
+				name:'查询'
+			},{
+				url:'#',
+				name:'删除'
+			}]},
+			{
+				url:'#',
+				icon:'icon-group',
+				name:'国内单笔保理',
+				children:[{
+					url:'#',
+					icon:'icon-group',
+					name:'登记',
+					children:[{
+							url:'#',
+							name:'申请'
+						},{
+							url:'#',
+							name:'复核'
+						},{
+							url:'#',
+							name:'退回在途'
+						},{
+							url:'#',
+							name:'删除在途'
+						}]
+				}]
+				}
+		]
+		var vm = new Vue({
+			el: '#yu',
+			data:{
+				yu:data
+			}
+		});
+  </script>
+  </body>
+</html>

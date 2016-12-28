@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    	<meta charset="utf-8">
+		<title></title>
+		<link href="../css/bootstrap.min.css" rel="stylesheet">
+	    <link href="../css/bootstrap-reset.css" rel="stylesheet">
+	    	<!-- FontAwesome Styles-->
+    	<link href="../css/font-awesome.css" rel="stylesheet" />
+	    <!--external css-->
+	    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+	    <link href="../assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
+	    <link rel="stylesheet" href="../css/owl.carousel.css" type="text/css">
+	    <!-- Custom styles for this template -->
+	    <link href="../css/style.css" rel="stylesheet">
+	    <link href="../css/style-responsive.css" rel="stylesheet" />
+	     <!-- 2、 引入Bootstrap 样式-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    
+		<!-- 3、引入jQuery.js (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.min.js"></script>
+    
+    <!-- 4、引入 bootstrap.js  Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    
+    <!-- 5、bootstrap table组件以及中文包的引用 -->
+    <script src="../js/bootstrap-table.js"></script>
+    <link href="../css/bootstrap-table.css" rel="stylesheet" />
+    <script src="../js/locale/bootstrap-table-zh-CN.js"></script>
+    <script type="text/javascript" src="../js/vue.js"></script>
+    <!-- 6、兼容IE9以下的浏览器   -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- 7、页面Js文件的引用    -->
+    <script src="../js/index.js"></script>
+	    <!-- 5、bootstrap table组件以及中文包的引用 -->
+	     <link href="../css/bootstrap-table.css" rel="stylesheet" />
+    
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="../img/favicon.html">
+
+    <title>Form Wizard</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <link href="../css/style.css" rel="stylesheet">
+    <link href="../css/style-responsive.css" rel="stylesheet" />
+    <link rel="stylesheet" href="../css/custom-styles.css" />
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+  <section id="container" class="">
+      <!--中1区域 header start-->
+      <header class="header white-bg">
+            <div class="sidebar-toggle-box">
+                <div class="icon-reorder tooltips"></div>
+            </div>
+            <!--logo start-->
+            <a href="#" class="logo"><img src="../image/供应链金融.png"></a>
+            <!--logo end-->
+            <div class="top-nav ">
+                <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <!-- user login dropdown start-->
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="username">小明</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
+                            <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
+                            <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
+                            <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                    <!-- user login dropdown end -->
+                </ul>
+                <!--search & user info end-->
+            </div>
+        </header>
+      <!--header end-->
+      <!--sidebar start-->
+      <aside>
+	      	 <!--/. NAV TOP  -->
+	        <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
+	            <div class="sidebar-collapse">
+	                <ul class="nav" id="main-menu">
+	
+	                    <li>
+	                        <a class="active-menu" href="home.html"><i class="icon-home fa fa-dashboard"></i> 首页</a>
+	                    </li>
+	                    <li>
+	                        <a href="ui-elements.html"><i class="icon-group fa fa-desktop"></i> 客户管理<span class="fa arrow"></span></a>
+	                    		<ul class="nav nav-second-level">
+	                            <li>
+	                                <a href="#">新增</a>
+	                            </li>
+	                            <li>
+	                                <a href="#">修改</a>
+	                            </li>
+	                            <li>
+	                                <a href="#">查询</a>
+	                            </li>
+	                            <li>
+	                                <a href="#">删除</a>
+	                            </li>
+	                        </ul>
+	                    <li>
+	                        <a href="#"><i class="icon-briefcase fa-sitemap"></i> 国内单笔保理<span class="fa arrow"></span></a>
+	                        <ul class="nav nav-second-level">
+	                            <li>
+	                                <a href="#"><i class="icon-pencil"></i>登记<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level">
+	                                    <li>
+	                                        <a href="#">申请</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">复核</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">退回处理</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">删除在途</a>
+	                                    </li>
+	
+	                                </ul>
+	                            </li>
+	                             <li>
+	                                <a href="#"><i class="icon-mail-forward"></i>转让<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level">
+	                                    <li>
+	                                        <a href="#">申请</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">复核</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">退回处理</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">删除在途</a>
+	                                    </li>
+	
+	                                </ul>
+	                            </li>
+	                             <li>
+	                                <a href="#"><i class="icon-cny"></i>融资<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level">
+	                                    <li>
+	                                        <a href="#">申请</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">复核</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">退回处理</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">删除在途</a>
+	                                    </li>
+	
+	                                </ul>
+	                            </li>
+	                        		  <li>
+	                                <a href="#"><i class="icon-credit-card"></i>付款<span class="fa arrow"></span></a>
+	                                <ul class="nav nav-third-level">
+	                                    <li>
+	                                        <a href="#">申请</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">复核</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">退回处理</a>
+	                                    </li>
+	                                    <li>
+	                                        <a href="#">删除在途</a>
+	                                    </li>
+	
+	                                </ul>
+	                            </li>
+	                        </ul>
+	                    </li>
+	                </ul>
+	
+	            </div>
+	
+	        </nav>
+	        <!-- /. NAV SIDE  -->
+      </aside>
+      <!--sidebar end-->
+      <!--main content start-->
+      <section id="main-content">
+          <section class="wrapper">
+              <!-- page start-->
+              <div class="row">
+                  <div class="col-lg-12">
+                      <section class="panel">
+                          <header class="panel-heading">
+                              	<ol class="breadcrumb">
+																	  <li><a href="#">国内单笔保理</a></li>
+																	  <li><a href="#">登记</a></li>
+																	  <li class="active">申请</li>
+																</ol>
+                          </header>
+                          <div class="panel-body">
+                              <div class="stepy-tab">
+                                  <ul id="default-titles" class="stepy-titles clearfix">
+                                      <li id="default-title-0" class="current-step">
+                                          <div>查询</div>
+                                      </li>
+                                      <li id="default-title-1" class="">
+                                          <div>业务</div>
+                                      </li>
+                                      
+                                      <!--<li id="default-title-2" class="" >
+                                          <div>账务</div>
+                                      </li>-->
+                                      <li id="default-title-2" class="">
+                                          <div>预览</div>
+                                      </li>
+                                  </ul>
+                              </div>
+                              <form class="form-horizontal" id="default">
+                                  <fieldset title="查询" class="step" id="default-step-0">
+                                  	<legend> </legend>
+                                  	<div class="form-group">
+														      		<div class="row">
+														      			<div class="col-lg-3"></div>
+														      			<div class="col-lg-4">
+														              		<div class="input-group">
+																					      <input type="text" class="form-control" placeholder="Search something">
+																					      <span class="input-group-btn">
+																					        <button class="btn btn-info" type="button"><i class="icon-search"></i></button>
+																					      </span>
+																					    </div><!-- /input-group -->
+																		    </div>
+																		    <div class="col-lg-2">
+																		        <a id="searchMore" style="display: block;margin-top: 6px;"><span>更多筛选条件 </span><i class="icon-chevron-up"></i></a>
+																		    </div>
+																	    </div>
+																    </div>       
+																		<div id="searchNoreDiv">
+																			<div class="form-group  col-lg-6">
+																			<label for="inputPassword3" class="col-sm-3 control-label">授信客户名称:</label>
+																	    <div class="col-sm-8">
+																	      <input type="input" class="form-control" id="inputPassword3">
+																	    </div>
+																		</div>
+																		<div class="form-group col-lg-6">
+																			<label for="inputPassword3" class="col-sm-3 control-label">客户编号:</label>
+																	    <div class="col-sm-8">
+																	      <input type="input" class="form-control" id="inputPassword3">
+																	    </div>
+																		</div>
+																		</div>
+												    				<table id="ta"></table>
+                                  		
+                                 </fieldset>
+                                  <fieldset title="业务" class="step" id="default-step-1" >
+                                      <legend> </legend>
+                                 
+		                                      	<!--form表单2-->
+				                                  	<div class="panel-body col-sm-6">
+				                                  		<div class="form-group">
+						                                      <label for="" class="col-lg-3 control-label">登记流水号：</label>
+						                                      <div class="col-lg-9 input-group">
+						                                          <input type="email" class="form-control" id="inputEmail1">
+						                                      </div>
+						                                  </div>
+						                                  <div class="form-group">
+						                                      <label for="" class="col-lg-3 control-label">授信客户名称：</label>
+						                                      <div class="col-lg-9 input-group">
+						                                          <input type="email" class="form-control" id="inputEmail1">
+						                                      </div>
+						                                  </div>
+						                                  <div class="form-group">
+				                                      <label for="" class="col-lg-3 control-label">发票登记笔数：</label>
+				                                      <div class="col-lg-9 input-group">
+				                                          <input type="password" class="form-control" id="inputPassword1">
+				                                      </div>
+						                                  </div>
+						                                	
+				                                  	</div>
+				                                  	<!--form表单1-->
+				                                  	<div class="panel-body col-sm-6">
+				                             
+						                                  <div class="form-group">
+						                                      <label for="" class="col-lg-3 control-label">授信客户编号：</label>
+						                                      <div class="col-lg-9">
+						                                          <input type="text" class="form-control" id="inputEmail1">
+						                                      </div>
+						                                  </div>
+						                                  <div class="form-group">
+					                                      <label for="" class="col-lg-3 control-label">币种:</label>
+					                                      <div class="col-lg-9">
+					                                          <input type="text" class="form-control" id="inputPassword1">
+					                                      </div>
+						                                  </div>
+						                                  <div class="form-group">
+					                                       <label for="" class="col-lg-3 control-label">发票登记金额:</label>
+					                                      <div class="col-lg-9">
+					                                          <input type="text" class="form-control" id="inputPassword1">
+					                                      </div>
+						                                  </div>
+						                                  </div>
+				                                  		
+				                                  	<!--表格 div-->
+				                               			 <div>
+                               			 	 <div id="toolbar" class="btn-group">
+															            <button id="btn_add" type="button" class="btn btn-myBlue">
+															                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+															            </button>
+															            <button id="btn_edit" type="button" class="btn btn-myBlue">
+															                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+															            </button>
+															            <button id="btn_delete" type="button" class="btn btn-myBlue">
+															                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+															            </button>
+															         </div>
+                               			 	<table id="tb_departments"></table>
+                               			 </div>
+                                  </fieldset>
+                                  <!--<fieldset title="账务" class="step" id="default-step-2" >
+                                      <legend> </legend>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Full Name</label>
+                                          <div class="col-lg-10">
+                                              <p class="form-control-static">Tawseef Ahmed</p>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Email Address</label>
+                                          <div class="col-lg-10">
+                                              <p class="form-control-static">tawseef@vectorlab.com</p>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">User Name</label>
+                                          <div class="col-lg-10">
+                                              <p class="form-control-static">tawseef</p>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Phone</label>
+                                          <div class="col-lg-10">
+                                              <p class="form-control-static">01234567</p>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Mobile</label>
+                                          <div class="col-lg-10">
+                                              <p class="form-control-static">01234567</p>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-2 control-label">Address</label>
+                                          <div class="col-lg-10">
+                                              <p class="form-control-static">
+                                                  Dreamland Ave, Suite 73
+                                                  AU, PC 1361
+                                                  P: (123) 456-7891 </p>
+                                          </div>
+                                      </div>
+                                  </fieldset>-->
+                                  <fieldset title="结果页" class="step" id="default-step-2" >
+                                      <legend> </legend>
+                                      <div class="form-group">
+                                          <label class="col-lg-3 control-label">登记流水号</label>
+                                          <div class="col-lg-9">
+                                              <p class="form-control-static">Trf04438</p>
+                                          </div>
+                                      </div>
+                                     <div class="form-group">
+                                          <label class="col-lg-3 control-label">授信客户编号</label>
+                                          <div class="col-lg-9">
+                                              <p class="form-control-static">Fac02848</p>
+                                          </div>
+                                      </div>
+                                       <div class="form-group">
+                                          <label class="col-lg-3 control-label">授信客户名称</label>
+                                          <div class="col-lg-9">
+                                              <p class="form-control-static">大大实业公司</p>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-3 control-label">币种</label>
+                                          <div class="col-lg-9">
+                                              <p class="form-control-static">CNY</p>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-3 control-label">发票登记笔数</label>
+                                          <div class="col-lg-9">
+                                              <p class="form-control-static">0</p>
+                                          </div>
+                                      </div>
+                                      <div class="form-group">
+                                          <label class="col-lg-3 control-label">发票登记金额</label>
+                                          <div class="col-lg-9">
+                                              <p class="form-control-static">10000.00</p>
+                                          </div>
+                                      </div>
+                                        	<!--表格 div-->
+                               			 	<table id="tb3"></table>
+                                  </fieldset>
+                                  <input type="submit" class="finish btn btn-danger" value="打印"/>
+                              </form>
+                          </div>
+                      </section>
+                  </div>
+              </div>
+              <!-- page end-->
+          </section>
+      </section>
+      <!--main content end-->
+  </section>
+
+<!--新增的弹出-->
+<div class="modal fade"  id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" onscroll="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel"><span style="font-size: 14px;display: block;margin-bottom: 7px;margin-left: 10px">新增</span></h4>
+      </div>
+      <div class="modal-body">
+           	<!--form表单-->
+           	<form class="form-horizontal">
+           		<!--form表单2-->
+          	<div class="panel-body col-sm-6">
+          		<div class="form-group">
+                      <label for="" class="col-lg-6 control-label">登记流水号：</label>
+                      <div class="col-lg-6 input-group">
+                          <input type="email" class="form-control" id="inputEmail1">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                      <label for="" class="col-lg-6 control-label">授信客户名称：</label>
+                      <div class="col-lg-6 input-group">
+                          <input type="email" class="form-control" id="inputEmail1">
+                      </div>
+                  </div>
+                  <div class="form-group">
+              <label for="" class="col-lg-6 control-label">发票登记笔数：</label>
+              <div class="col-lg-6 input-group">
+                  <input type="password" class="form-control" id="inputPassword1">
+              </div>
+                  </div>
+                	
+          	</div>
+          	<!--form表单1-->
+          	<div class="panel-body col-sm-6">
+     
+                  <div class="form-group">
+                      <label for="" class="col-lg-6 control-label">授信客户编号：</label>
+                      <div class="col-lg-6">
+                          <input type="text" class="form-control" id="inputEmail1">
+                      </div>
+                  </div>
+                  <div class="form-group">
+                  <label for="" class="col-lg-6 control-label">币种:</label>
+                  <div class="col-lg-6">
+                      <input type="text" class="form-control" id="inputPassword1">
+                  </div>
+                  </div>
+                  <div class="form-group">
+                   <label for="" class="col-lg-6 control-label">发票登记金额:</label>
+                  <div class="col-lg-6">
+                      <input type="text" class="form-control" id="inputPassword1">
+                  </div>
+                  </div>
+                  </div>
+				                                  		
+           	</form>
+          						
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-info">保存</button>
+      </div>
+    </div>
+  </div>
+</div>
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="../js/jquery.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/jquery.scrollTo.min.js"></script>
+    <script src="../js/jquery.nicescroll.js" type="text/javascript"></script>
+		
+
+
+    <!--common script for all pages-->
+    <script src="../js/common-scripts.js"></script>
+
+    <!--script for this page-->
+    <script src="../js/jquery.stepy.js"></script>
+		<script src="../js/bootstrap-table.js"></script>
+   
+    <script src="../js/locale/bootstrap-table-zh-CN.js"></script>
+    <!-- 7、页面Js文件的引用    -->
+    <script src="../js/index.js"></script>
+    <!-- Metis Menu Js -->
+    <script src="../js/jquery.metisMenu.js"></script>
+		<script src="../js/custom-scripts.js"></script>
+		
+  <script>
+
+      //step wizard
+
+      $(function() {
+      		$('#searchNoreDiv').hide();
+          $('#default').stepy({
+              backLabel: '上一步',
+              block: true,
+              nextLabel: '下一步',
+              titleClick: true,
+              titleTarget: '.stepy-tab'
+          });
+          createTable('ta');
+           createTable('tb3');
+		      /**
+		       * 新增的弹出窗口
+		       */
+          $('#btn_add').on('click',function(){
+          	$('#addModal').modal();
+          });
+          $('#searchContent').on('click',function(){
+          	seachCust();
+          });
+          
+          $('#searchMore').on('click',function(){
+          	changeSearchStyle()
+          });
+      });
+      
+      
+      /**
+       * 查询的弹出窗口
+       */
+      function seachCust(){
+      	$('#myModal').modal();
+      	createTable('ta');
+      }
+      
+      /**
+       * 改变查询更多条件的样式
+       */
+      function changeSearchStyle(){
+      	var i = $('#searchMore').children('i');
+          	if(i.hasClass('icon-chevron-up')){
+          		i.removeClass('icon-chevron-up');
+          		i.addClass('icon-chevron-down');
+          		$('#searchMore').children('span').html('精选筛选条件 ');
+          		$('#searchNoreDiv').show();
+          	}else{
+          		i.removeClass('icon-chevron-down');
+          		i.addClass('icon-chevron-up');
+          		$('#searchMore').children('span').html('更多筛选条件 ');
+          		$('#searchNoreDiv').hide();
+          	}
+      }
+  </script>
+
+
+  </body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 1、设置适应多终端    -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bootstrap-table 样例</title>
+
+    <!-- 2、 引入Bootstrap 样式-->
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    
+		<!-- 3、引入jQuery.js (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="../js/jquery.min.js"></script>
+    
+    <!-- 4、引入 bootstrap.js  Include all compiled plugins (below), or include individual files as needed -->
+    <script src="../js/bootstrap.min.js"></script>
+    
+    <!-- 5、bootstrap table组件以及中文包的引用 -->
+    <script src="../js/bootstrap-table.js"></script>
+    <link href="../css/bootstrap-table.css" rel="stylesheet" />
+    <script src="../js/locale/bootstrap-table-zh-CN.js"></script>
+    
+    <!-- 6、兼容IE9以下的浏览器   -->
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="js/html5shiv.min.js"></script>
+      <script src="js/respond.min.js"></script>
+    <![endif]-->
+    
+    <!-- 7、页面Js文件的引用    -->
+    <script src="../js/index.js"></script>
+    
+  </head>
+  <body>
+ 		<div class="panel-body" style="padding-bottom:0px;">
+        <div class="panel panel-default">
+            <div class="panel-heading">查询条件</div>
+            <div class="panel-body">
+                <form id="formSearch" class="form-horizontal">
+                    <div class="form-group" style="margin-top:15px">
+                        <label class="control-label col-sm-1" for="txt_search_departmentname">部门名称</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="txt_search_departmentname">
+                        </div>
+                        <label class="control-label col-sm-1" for="txt_search_level">部门级别</label>
+                        <div class="col-sm-3">
+                            <input type="text" class="form-control" id="txt_search_level">
+                        </div>
+                        <div class="col-sm-4" style="text-align:left;">
+                            <button type="button"  id="btn_query" class="btn btn-primary">查询</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>       
+
+        <div id="toolbar" class="btn-group">
+            <button id="btn_add" type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
+            </button>
+            <button id="btn_edit" type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>修改
+            </button>
+            <button id="btn_delete" type="button" class="btn btn-default">
+                <span class="glyphicon glyphicon-remove" aria-hidden="true"></span>删除
+            </button>
+        </div>
+        <table id="tb_departments"></table>
+    </div>
+  </body>
+</html>

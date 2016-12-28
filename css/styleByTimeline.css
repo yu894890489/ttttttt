@@ -1,0 +1,52 @@
+/*各个部分样式*/
+
+@charset "utf-8";
+.timeLine {
+	width: 100%;
+	height: auto;
+	margin: 20px auto;
+	padding-bottom: 1rem;
+	text-align: center;
+	font-size: 0;
+}
+
+.timeLine li {
+	position: relative;
+	display: inline-block;
+	*display: inline;
+	zoom: 1;
+	width: auto;
+	font-size: 0.8rem;
+	padding: 1rem 1rem 1.4rem 1rem;
+}
+
+
+
+.timeLine li .time:after {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background: #c6cad6;
+	left: 0;
+	bottom: 0;
+	margin-left: -2px;
+}
+.timeLine li .time:before {
+	content: '';
+	display: block;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	bottom: 0;
+	margin-bottom: -4px;
+	left: 50%;
+	margin-left: -5px;
+	background: #c6cad6;
+	-moz-border-radius: 100%;
+	-webkit-border-radius: 100%;
+	border-radius: 100%;
+	background-size: 10px 10px;
+	z-index: 99;
+}
