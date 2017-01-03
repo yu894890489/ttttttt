@@ -82,24 +82,8 @@
             <!--logo end-->
             <div class="top-nav ">
                 <!--search & user info start-->
-                <ul class="nav pull-right top-menu">
-                    <!-- user login dropdown start-->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="username">小明</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
-                            <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-                            <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
-                            <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
-                        </ul>
-                    </li>
-                    <!-- user login dropdown end -->
-                </ul>
-                <!--search & user info end-->
+              <user-name></user-name>
+              <!--search & user info end-->
             </div>
         </header>
       <!--header end-->
@@ -113,13 +97,14 @@
       <!--sidebar end-->
       <!--main content start-->
       <section id="main-content" class="wrapper">
-      	<div id="mapDiv">
-      		<div  style="height: 50%;width: 100%;margin-top: 4px;">
-      			<div id="map"  style="width: 50%;"></div>
-      			<div id="map1"  style="height: 100%;width: 50%;float: left;"></div>
-      			<div id="map2" style="height: 100%;width: 50%;float: right;"></div>
+      	<div id="mapDiv" >
+      		<div  style="height: 50%;width: 100%;margin-top: 4px;"class="row">
+      			<div class="col-lg-12"><div id="map" class="col-lg-6"></div></div>
+      			<div class="col-lg-12"><div id="mapLine" class="col-lg-6"></div></div>
+      			<div id="map1"  class="col-lg-6" style="height: 100%;padding-right:0px;margin-right:20px;float: left;"></div>
+      			<div id="map2" class="col-lg-6" style="height: 100%;float: left;"></div>
       		</div>
-    			<div style="height: 50%;width: 100%;">
+    			<div style="height: 50%;width: 100%;" class="col-lg-6">
     				<div><table id="tb_departments"></table></div>
     				<div id="map3" style="height: 100%;width: 50%;float: left;"></div>
     				<div id="map4" style="height: 100%;width: 50%;float: right;"></div>
@@ -151,11 +136,38 @@
     <script src="../js/jquery.metisMenu.js"></script>
 		<script src="../js/custom-scripts.js"></script>
 		<script src="../js/echarts-all.js"></script>
+		<script type="text/x-template" id="userName-template">
+			 <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" id="nameA" class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <span class="username">小明</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout" role="menu">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+		</script>
+		<script>
+			Vue.component('user-name',{
+				template:'#userName-template'
+			});
+			var userName = new Vue({
+				el : '#userName'
+			});
+		</script>
 		<script>
 			$(function(){
 				$('#mapDiv').height($('#sidebar').height());
+			});
+		</script>
+			<script>
+			$(function(){
+				
 				var worldMapContainer = document.getElementById('map1');
-			debugger;
 			//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
 			
 			var resizeWorldMapContainer = function () {
@@ -168,15 +180,16 @@
 			var myChart = echarts.init(worldMapContainer);
 			
 			var option = {
+						backgroundColor:'#fff',
 				    title : {
-				        text: '某楼盘销售情况',
-				        subtext: '纯属虚构'
+				        text: '曲线图'
+				        //subtext: '纯属虚构'
 				    },
 				    tooltip : {
 				        trigger: 'axis'
 				    },
 				    legend: {
-				        data:['意向','预购','成交'],
+				        data:['融资','登记','转让'],
 				        height: worldMapContainer.style.height,
 				        width: worldMapContainer.style.width
 				    },
@@ -205,21 +218,21 @@
 				    ],
 				    series : [
 				        {
-				            name:'成交',
+				            name:'融资',
 				            type:'line',
 				            smooth:true,
 				            itemStyle: {normal: {areaStyle: {type: 'default'}}},
 				            data:[10, 12, 21, 54, 260, 830, 710]
 				        },
 				        {
-				            name:'预购',
+				            name:'登记',
 				            type:'line',
 				            smooth:true,
 				            itemStyle: {normal: {areaStyle: {type: 'default'}}},
 				            data:[30, 182, 434, 791, 390, 30, 10]
 				        },
 				        {
-				            name:'意向',
+				            name:'转让',
 				            type:'line',
 				            smooth:true,
 				            itemStyle: {normal: {areaStyle: {type: 'default'}}},
@@ -231,13 +244,88 @@
 			myChart.setOption(option);
 			
 			//用于使chart自适应高度和宽度
+		
+  			var worldMapContainer2 = document.getElementById('map2');
+			//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
+  			var resizeWorldMapContainer2 = function () {
+			    worldMapContainer2.style.width = $('#mapLine').width()+'px';
+			    worldMapContainer2.style.height = $('#map2').height()+'px';
+			};
+			//设置容器高宽
+			resizeWorldMapContainer2();
+			// 基于准备好的dom，初始化echarts实例
+			var c = echarts.init(worldMapContainer2);
+  	var option = {
+  			backgroundColor:'#fff',
+		    title : {
+		        text: '饼图',
+		//      subtext: '纯属虚构',
+		        x:'left'
+		    },
+		    tooltip : {
+		        trigger: 'item',
+		        formatter: "{a} <br/>{b} : {c} ({d}%)"
+		    },
+		    legend: {
+		        orient : 'vertical',
+		        x : 'left',
+		        y:'bottom',
+		        data:['直接访问','邮件营销','联盟广告','视频广告','搜索引擎'],
+		        height: worldMapContainer2.style.height,
+		        width: worldMapContainer2.style.width
+		    },
+		    toolbox: {
+		        show : true,
+		        feature : {
+		            mark : {show: false},
+		            dataView : {show: true, readOnly: false},
+		            magicType : {
+		                show: true, 
+		                type: ['pie', 'funnel'],
+		                option: {
+		                    funnel: {
+		                        x: '25%',
+		                        width: '50%',
+		                        funnelAlign: 'left',
+		                        max: 1548
+		                    }
+		                }
+		            },
+		            restore : {show: true},
+		            saveAsImage : {show: true}
+		        }
+		    },
+		    calculable : true,
+		    series : [
+		        {
+		            name:'访问来源',
+		            type:'pie',
+		            radius : '55%',
+		            center: ['50%', '60%'],
+		            data:[
+		                {value:335, name:'直接访问'},
+		                {value:310, name:'邮件营销'},
+		                {value:234, name:'联盟广告'},
+		                {value:135, name:'视频广告'},
+		                {value:1548, name:'搜索引擎'}
+		            ]
+		        }
+		    ]
+		};
+// 使用刚指定的配置项和数据显示图表。
+			c.setOption(option);
+			
+			//用于使chart自适应高度和宽度
 			window.onresize = function () {
 			    //重置容器高宽
-			    resizeWorldMapContainer();
+			    resizeWorldMapContainer2();
+			    c.resize();
+			     resizeWorldMapContainer();
 			    myChart.resize();
 			};
-			});
-		</script>
+  		});
+  	</script>
+  
   <script>
 
       //step wizard
@@ -294,8 +382,7 @@
           	}
       }
   </script>
-  <script type="text/x-template" id="nav">
-  	 <!--/. NAV TOP  -->
+   <!--<script type="text/x-template" id="nav">
 	         <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
 	            <div class="sidebar-collapse">
 	                <ul class="nav" id="main-menu">
@@ -305,121 +392,24 @@
 	                    </li>
 	                    <li v-for="key in yu">
 	                    	<a href="{{key.url}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
-	                    		<ul v-if="key.children!=undefined" class="nav nav-second-level">
-	                    			<li v-for="ke in key">
-	                    				 <a href="#"><i v-if="ke.children!=undefined" class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
+	                    		<ul v-if="key.children != undefined" class="nav nav-second-level">
+	                    			<li v-for="ke in key.children">
+	                    				 <a href="{{ke.url}}"><i v-if="ke.children!=undefined" class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
                             	 <ul v-if="ke.children!=undefined" class="nav nav-third-level">
-                            	 	<li v-for="k in ke">
-                            	 		<a href="{{k.url}}">k.name</a>
+                            	 	<li v-for="k in ke.children">
+                            	 		<a href="{{k.url}}">{{k.name}}</a>
                             	 	</li>	
                             	 </ul>
                             </li>
 	                    		</ul>
 	                    </li>
-	                    <li>
-	                        <a href="#"><i class="icon-group fa fa-desktop"></i> 客户管理<span class="fa arrow"></span></a>
-	                    		<ul class="nav nav-second-level">
-	                            <li>
-	                                <a href="#">新增</a>
-	                            </li>
-	                            <li>
-	                                <a href="#">修改</a>
-	                            </li>
-	                            <li>
-	                                <a href="#">查询</a>
-	                            </li>
-	                            <li>
-	                                <a href="#">删除</a>
-	                            </li>
-	                        </ul>
-	                    </li>
-	                    <li>
-	                        <a href="#"><i class="fa fa-sitemap"></i> 国内单笔保理<span class="fa arrow"></span></a>
-	                        <ul class="nav nav-second-level">
-	                            <li>
-	                                <a href="#"><i class="icon-pencil"></i>登记<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                             <li>
-	                                <a href="#"><i class="icon-mail-forward"></i>转让<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                             <li>
-	                                <a href="#"><i class="icon-cny"></i>融资<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                        		  <li>
-	                                <a href="#"><i class="icon-credit-card"></i>付款<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                        </ul>
-	                    </li>
-	                	<li>
-	                		<a href="#"><i class="icon-bar-chart fa fa-desktop"></i> 报表</a>
-	                	</li>
+	                    
 	                </ul>
 	
 	            </div>
 	
 	        </nav>
 	         	
-	         <!-- /. NAV SIDE  -->
   </script>
   <script type="text/javascript">
 		Vue.component('nav-tem', {
@@ -428,53 +418,112 @@
 		  	yu:Array
 		  }
 		}); 
-		var data = [{
+		var testData = [{
+							url:'form_wizard.html?name="申请"',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name="复核"',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name="在途"',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name="处理"',
+							name:'处理'
+						}];
+		
+		var datay = [{
 			url:'#',
 			icon:'icon-group',
 			name:'客户管理',
 			children:[{
-				url:'#',
+				url:'form_wizard.html?name="新增"',
 				name:'新增'
 			},{
-				url:'#',
+				url:'form_wizard.html?name="修改"',
 				name:'修改'
 			},{
-				url:'#',
+				url:'form_wizard.html?name="查询"',
 				name:'查询'
 			},{
-				url:'#',
+				url:'form_wizard.html?name="删除"',
 				name:'删除'
 			}]},
 			{
 				url:'#',
-				icon:'icon-group',
+				icon:'icon-briefcase',
 				name:'国内单笔保理',
 				children:[{
 					url:'#',
-					icon:'icon-group',
+					icon:'icon-pencil',
 					name:'登记',
+					children:testData
+				},{
+					url:'#',
+					icon:'icon-mail-forward',
+					name:'转让',
 					children:[{
-							url:'#',
+							url:'form_wizard.html?name="申请"',
 							name:'申请'
 						},{
-							url:'#',
+							url:'form_wizard.html?name="复核"',
 							name:'复核'
 						},{
-							url:'#',
-							name:'退回在途'
+							url:'form_wizard.html?name="在途"',
+							name:'在途'
 						},{
-							url:'#',
-							name:'删除在途'
+							url:'form_wizard.html?name="处理"',
+							name:'处理'
 						}]
-				}]
+				},{
+					url:'#',
+					icon:'icon-cny',
+					name:'融资',
+					children:[{
+							url:'form_wizard.html?name="申请"',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name="复核"',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name="在途"',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name="处理"',
+							name:'处理'
+						}]
+				},{
+					url:'#',
+					icon:'icon-credit-card',
+					name:'付款',
+					children:[{
+							url:'form_wizard.html?name="申请"',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name="复核"',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name="在途"',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name="处理"',
+							name:'处理'
+						}]
+				},]
+				},
+				{
+					url:'barPage.html',
+					icon:'icon-bar-chart',
+					name:'报表',
 				}
-		]
+		];
 		var vm = new Vue({
-			el: '#yu',
-			data:{
-				yu:data
-			}
-		});
+								el: '#yu',
+								data:{
+									yu:datay
+								}
+							});
   </script>
+  -->
   </body>
 </html>

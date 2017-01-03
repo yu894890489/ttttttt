@@ -155,7 +155,16 @@ ul {
     border-color: #3e3f3a;
     color: #FFFFFF;
 }
-
+.btn-default1{
+ 	color: #333;
+    background-color: #fff;
+    border-color: #ccc;
+}
+.btn-default1:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open .dropdown-toggle.btn-default {
+    background-color: #ccc;
+    border-color: #3e3f3a;
+    color: balck;
+}
 .btn-radius{ 
 	margin-bottom:15px;width: 50px; height: 50px; -moz-border-radius: 50%; -webkit-border-radius: 50%; border-radius: 50%; }
 .btn-primary {

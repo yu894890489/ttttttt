@@ -1,0 +1,29 @@
+<!--/. NAV TOP  -->
+	         <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
+	            <div class="sidebar-collapse">
+	                <ul class="nav" id="main-menu">
+	
+	                    <li>
+	                        <a class="active-menu" href="home.html"><i class="fa fa-dashboard"></i> 首页</a>
+	                    </li>
+	                    <li v-for="key in yu">
+	                    	<a href="{{key.url}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
+	                    		<ul v-if="key.children != undefined" class="nav nav-second-level">
+	                    			<li v-for="ke in key.children">
+	                    				 <a href="{{ke.url}}"><i v-if="ke.children!=undefined" class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
+                            	 <ul v-if="ke.children!=undefined" class="nav nav-third-level">
+                            	 	<li v-for="k in ke.children">
+                            	 		<a href="{{k.url}}">{{k.name}}</a>
+                            	 	</li>	
+                            	 </ul>
+                            </li>
+	                    		</ul>
+	                    </li>
+	                    
+	                </ul>
+	
+	            </div>
+	
+	        </nav>
+	         	
+	         <!-- /. NAV SIDE  -->

@@ -1,9 +1,50 @@
-var Script = function () {
 
+function createNav(dat){
+	$.ajax({
+		type:"get",
+		url:"copy/navTem.html",
+		async:false,
+		success:function(data){
+			Vue.component('nav-tem', {
+			  template: data,
+			  props: {
+			  	yu:Array
+			  }
+			});
+				var vm = new Vue({
+									el: '#yu',
+									data:{
+										yu:eval(dat)
+									}
+								});
+		}
+	});
+	//$.get('copy/navTem.html',);
+	
+}
+var Script = function () {
+		$.ajax({
+			type:"get",
+			url:"data/nav.html",
+			async:false,
+			success:function(data){
+		  		createNav(data);
+		  	}
+		});
+//		$.get('data/nav.html',function(data){
+//		createNav(data);
+//	});
 
 
 //    sidebar dropdown menu
-
+//	$('.icon-reorder').click(function(){
+//		debugger;
+//		if($('#sidebar').css('display')=='none'){
+//			$('#sidebar').show();
+//		}else{
+//			$('#sidebar').hide();
+//		}
+//	});
     jQuery('#sidebar .sub-menu > a').click(function () {
         var last = jQuery('.sub-menu.open', $('#sidebar'));
         last.removeClass("open");
@@ -92,7 +133,6 @@ var Script = function () {
     });
 
 //    tool tips
-
     $('.tooltips').tooltip();
 
 //    popovers

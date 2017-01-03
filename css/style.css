@@ -26,6 +26,9 @@ a, a:hover, a:focus {
     text-decoration: none;
     outline: none;
 }
+.MyA:hover{
+	cursor: pointer;
+}
 .text-myBlue{
 	color:#014295 !important;
 }
@@ -38,7 +41,9 @@ a, a:hover, a:focus {
 .text-blue{
 	color: #57c8f2 !important;
 }
-
+.text-white{
+	color:#fff !important;
+}
 ::selection {
     background: #FF6C60;
     color: #fff;

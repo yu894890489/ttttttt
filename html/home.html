@@ -11,8 +11,6 @@
     	<link href="../css/font-awesome.css" rel="stylesheet" />
 	    <!--external css-->
 	    <link href="../assets/font-awesome/css/font-awesome.css" rel="stylesheet" />
-	    <link href="../assets/jquery-easy-pie-chart/jquery.easy-pie-chart.css" rel="stylesheet" type="text/css" media="screen"/>
-	    <link rel="stylesheet" href="../css/owl.carousel.css" type="text/css">
 	    <!-- Custom styles for this template -->
 	    <link href="../css/style.css" rel="stylesheet">
 	    <link href="../css/style-responsive.css" rel="stylesheet" />
@@ -80,26 +78,8 @@
             <!--logo start-->
             <a href="#" class="logo"><img src="../image/供应链金融.png"></a>
             <!--logo end-->
-            <div class="top-nav ">
-                <!--search & user info start-->
-                <ul class="nav pull-right top-menu">
-                    <!-- user login dropdown start-->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="username">小明</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
-                            <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-                            <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
-                            <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
-                        </ul>
-                    </li>
-                    <!-- user login dropdown end -->
-                </ul>
-                <!--search & user info end-->
+           <div class="top-nav " id="userName">
+            	<user-name></user-name>
             </div>
         </header>
       <!--header end-->
@@ -179,16 +159,24 @@
 										      	<div class="wrapper">
 						<ul class="timeLine">
 							<li>
-								<h5 class="time"><button class="btn btn-radius btn-info" ><i class="icon-pencil" style="font-size: 25px;"></i></button><br/>登记</h5>
+								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=dengji&name3=login">
+									<button  class="btn btn-radius btn-info" ><i class="icon-pencil" style="font-size: 25px;"></i></button><br/>登记</a></h5>
 							</li>
 							<li>
-								<h5 class="time"><button class="btn btn-radius btn-info" ><i class="icon-mail-forward" style="font-size: 25px;"></i></button><br/>转让</h5>
+								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=zhuan&name3=login">
+									<button class="btn btn-radius btn-info" >
+										<i class="icon-mail-forward" style="font-size: 25px;"></i></button><br/>转让</h5>
+								</a>
 							</li>
 							<li>
-								<h5 class="time"><button class="btn btn-radius btn-info" ><i class="icon-cny" style="font-size: 25px;"></i></button><br/>融资</h5>
+								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=rong&name3=login">
+									<button class="btn btn-radius btn-info" ><i class="icon-cny" style="font-size: 25px;"></i></button><br/>融资</h5>
+								</a>
 							</li>
 							<li>
-								<h5 class="time"><button class="btn btn-radius btn-info" ><i class="icon-credit-card" style="font-size: 25px;"></i></button><br/>付款</h5>
+								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=pay&name3=login">
+									<button class="btn btn-radius btn-info" ><i class="icon-credit-card" style="font-size: 25px;"></i></button><br/>付款</h5>
+								</a>
 							</li>
 						</ul>
 					  </div>
@@ -204,8 +192,8 @@
                               <div class="panel-body">
                               	<div style="background-image: url(../img/avatar1.jpg);height: 100px;background-repeat: no-repeat;margin-left:40%;"></div>
                               	<h2>
-                              		<p><span>余强，</span>欢迎进入供链金融系统</p>
-                              		<p>上一次登陆时间：<span>2016-12-22  16：02</span></p>
+                              		<p class="text-white"><span>余强，</span>欢迎进入供链金融系统</p>
+                              		<p class="text-white">上一次登陆时间：<span>2016-12-22  16：02</span></p>
                               	</h2>
                               </div>
                           </aside>
@@ -274,6 +262,29 @@
     <script src="../js/jquery.metisMenu.js"></script>
 		<script src="../js/custom-scripts.js"></script>
 		<script src="../js/echarts-all.js"></script>
+		<script type="text/x-template" id="userName-template">
+			 <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" id="nameA" class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <span class="username">小明</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout" role="menu">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+		</script>
+		<script>
+			Vue.component('user-name',{
+				template:'#userName-template'
+			});
+			var userName = new Vue({
+				el : '#userName'
+			});
+		</script>
   <script>
 
       //step wizard
@@ -330,187 +341,12 @@
           	}
       }
   </script>
-  <script type="text/x-template" id="nav">
-  	 <!--/. NAV TOP  -->
-	         <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
-	            <div class="sidebar-collapse">
-	                <ul class="nav" id="main-menu">
-	
-	                    <li>
-	                        <a class="active-menu" href="home.html"><i class="fa fa-dashboard"></i> 首页</a>
-	                    </li>
-	                    <li v-for="key in yu">
-	                    	<a href="{{key.url}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
-	                    		<ul v-if="key.children!=undefined" class="nav nav-second-level">
-	                    			<li v-for="ke in key">
-	                    				 <a href="#"><i v-if="ke.children!=undefined" class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
-                            	 <ul v-if="ke.children!=undefined" class="nav nav-third-level">
-                            	 	<li v-for="k in ke">
-                            	 		<a href="{{k.url}}">k.name</a>
-                            	 	</li>	
-                            	 </ul>
-                            </li>
-	                    		</ul>
-	                    </li>
-	                    <li>
-	                        <a href="#"><i class="icon-group fa fa-desktop"></i> 客户管理<span class="fa arrow"></span></a>
-	                    		<ul class="nav nav-second-level">
-	                            <li>
-	                                <a href="#">新增</a>
-	                            </li>
-	                            <li>
-	                                <a href="#">修改</a>
-	                            </li>
-	                            <li>
-	                                <a href="#">查询</a>
-	                            </li>
-	                            <li>
-	                                <a href="#">删除</a>
-	                            </li>
-	                        </ul>
-	                    </li>
-	                    <li>
-	                        <a href="#"><i class="fa fa-sitemap"></i> 国内单笔保理<span class="fa arrow"></span></a>
-	                        <ul class="nav nav-second-level">
-	                            <li>
-	                                <a href="#"><i class="icon-pencil"></i>登记<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                             <li>
-	                                <a href="#"><i class="icon-mail-forward"></i>转让<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                             <li>
-	                                <a href="#"><i class="icon-cny"></i>融资<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                        		  <li>
-	                                <a href="#"><i class="icon-credit-card"></i>付款<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                        </ul>
-	                    </li>
-	                	<li>
-	                		<a href="#"><i class="icon-bar-chart fa fa-desktop"></i> 报表</a>
-	                	</li>
-	                </ul>
-	
-	            </div>
-	
-	        </nav>
-	         	
-	         <!-- /. NAV SIDE  -->
+
+  <script>
+  $(function(){
+  	$('.dropdown-toggle').dropdown();
+  });
   </script>
-  <script type="text/javascript">
-		Vue.component('nav-tem', {
-		  template: '#nav',
-		  props: {
-		  	yu:Array
-		  }
-		}); 
-		var data = [{
-			url:'#',
-			icon:'icon-group',
-			name:'客户管理',
-			children:[{
-				url:'#',
-				name:'新增'
-			},{
-				url:'#',
-				name:'修改'
-			},{
-				url:'#',
-				name:'查询'
-			},{
-				url:'#',
-				name:'删除'
-			}]},
-			{
-				url:'#',
-				icon:'icon-group',
-				name:'国内单笔保理',
-				children:[{
-					url:'#',
-					icon:'icon-group',
-					name:'登记',
-					children:[{
-							url:'#',
-							name:'申请'
-						},{
-							url:'#',
-							name:'复核'
-						},{
-							url:'#',
-							name:'退回在途'
-						},{
-							url:'#',
-							name:'删除在途'
-						}]
-				}]
-				}
-		]
-		var vm = new Vue({
-			el: '#yu',
-			data:{
-				yu:data
-			}
-		});
-  </script>
+  <script src="../js/custom-scripts.js"></script>
   </body>
 </html>

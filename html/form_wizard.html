@@ -59,7 +59,17 @@
     <link href="../css/style.css" rel="stylesheet">
     <link href="../css/style-responsive.css" rel="stylesheet" />
     <link rel="stylesheet" href="../css/custom-styles.css" />
-
+			 <style media=print>
+    /* 应用这个样式的在打印时隐藏 */
+    .Noprint {
+     display: none;
+    }
+   
+    /* 应用这个样式的，从那个标签结束开始另算一页，之后在遇到再起一页，以此类推 */
+    .PageNext {
+     page-break-after: always;
+    }
+   </style>
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
       <script src="js/html5shiv.js"></script>
@@ -71,145 +81,23 @@
 
   <section id="container" class="">
       <!--中1区域 header start-->
-      <header class="header white-bg">
+      <header class="header white-bg Noprint">
             <div class="sidebar-toggle-box">
                 <div class="icon-reorder tooltips"></div>
             </div>
             <!--logo start-->
             <a href="#" class="logo"><img src="../image/供应链金融.png"></a>
             <!--logo end-->
-            <div class="top-nav ">
-                <!--search & user info start-->
-                <ul class="nav pull-right top-menu">
-                    <!-- user login dropdown start-->
-                    <li class="dropdown">
-                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
-                            <span class="username">小明</span>
-                            <b class="caret"></b>
-                        </a>
-                        <ul class="dropdown-menu extended logout">
-                            <div class="log-arrow-up"></div>
-                            <li><a href="#"><i class=" icon-suitcase"></i>Profile</a></li>
-                            <li><a href="#"><i class="icon-cog"></i> Settings</a></li>
-                            <li><a href="#"><i class="icon-bell-alt"></i> Notification</a></li>
-                            <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
-                        </ul>
-                    </li>
-                    <!-- user login dropdown end -->
-                </ul>
-                <!--search & user info end-->
+            <div class="top-nav " id="userName">
+            	<user-name></user-name>
             </div>
         </header>
       <!--header end-->
       <!--sidebar start-->
-      <aside>
-	      	 <!--/. NAV TOP  -->
-	        <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
-	            <div class="sidebar-collapse">
-	                <ul class="nav" id="main-menu">
-	
-	                    <li>
-	                        <a class="active-menu" href="home.html"><i class="icon-home fa fa-dashboard"></i> 首页</a>
-	                    </li>
-	                    <li>
-	                        <a href="ui-elements.html"><i class="icon-group fa fa-desktop"></i> 客户管理<span class="fa arrow"></span></a>
-	                    		<ul class="nav nav-second-level">
-	                            <li>
-	                                <a href="#">新增</a>
-	                            </li>
-	                            <li>
-	                                <a href="#">修改</a>
-	                            </li>
-	                            <li>
-	                                <a href="#">查询</a>
-	                            </li>
-	                            <li>
-	                                <a href="#">删除</a>
-	                            </li>
-	                        </ul>
-	                    <li>
-	                        <a href="#"><i class="icon-briefcase fa-sitemap"></i> 国内单笔保理<span class="fa arrow"></span></a>
-	                        <ul class="nav nav-second-level">
-	                            <li>
-	                                <a href="#"><i class="icon-pencil"></i>登记<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                             <li>
-	                                <a href="#"><i class="icon-mail-forward"></i>转让<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                             <li>
-	                                <a href="#"><i class="icon-cny"></i>融资<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                        		  <li>
-	                                <a href="#"><i class="icon-credit-card"></i>付款<span class="fa arrow"></span></a>
-	                                <ul class="nav nav-third-level">
-	                                    <li>
-	                                        <a href="#">申请</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">复核</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">退回处理</a>
-	                                    </li>
-	                                    <li>
-	                                        <a href="#">删除在途</a>
-	                                    </li>
-	
-	                                </ul>
-	                            </li>
-	                        </ul>
-	                    </li>
-	                </ul>
-	
-	            </div>
-	
-	        </nav>
-	        <!-- /. NAV SIDE  -->
+      <aside class="Noprint">
+	      	 <div id="yu">
+	      		<nav-tem :yu="yu"></nav-tem>
+	      	</div>
       </aside>
       <!--sidebar end-->
       <!--main content start-->
@@ -219,15 +107,11 @@
               <div class="row">
                   <div class="col-lg-12">
                       <section class="panel">
-                          <header class="panel-heading">
-                              	<ol class="breadcrumb">
-																	  <li><a href="#">国内单笔保理</a></li>
-																	  <li><a href="#">登记</a></li>
-																	  <li class="active">申请</li>
-																</ol>
+                          <header class="panel-heading Noprint" id="olHead">
+                              	<ol-tem :ol="ol"></ol-tem>
                           </header>
                           <div class="panel-body">
-                              <div class="stepy-tab">
+                              <div class="stepy-tab Noprint">
                                   <ul id="default-titles" class="stepy-titles clearfix">
                                       <li id="default-title-0" class="current-step">
                                           <div>查询</div>
@@ -259,7 +143,7 @@
 																					    </div><!-- /input-group -->
 																		    </div>
 																		    <div class="col-lg-2">
-																		        <a id="searchMore" style="display: block;margin-top: 6px;"><span>更多筛选条件 </span><i class="icon-chevron-up"></i></a>
+																		        <a id="searchMore" class="MyA" style="display: block;margin-top: 6px;"><span>更多筛选条件 </span><i class="icon-chevron-up"></i></a>
 																		    </div>
 																	    </div>
 																    </div>       
@@ -283,54 +167,12 @@
                                   <fieldset title="业务" class="step" id="default-step-1" >
                                       <legend> </legend>
                                  
-		                                      	<!--form表单2-->
-				                                  	<div class="panel-body col-sm-6">
-				                                  		<div class="form-group">
-						                                      <label for="" class="col-lg-3 control-label">登记流水号：</label>
-						                                      <div class="col-lg-9 input-group">
-						                                          <input type="email" class="form-control" id="inputEmail1">
-						                                      </div>
-						                                  </div>
-						                                  <div class="form-group">
-						                                      <label for="" class="col-lg-3 control-label">授信客户名称：</label>
-						                                      <div class="col-lg-9 input-group">
-						                                          <input type="email" class="form-control" id="inputEmail1">
-						                                      </div>
-						                                  </div>
-						                                  <div class="form-group">
-				                                      <label for="" class="col-lg-3 control-label">发票登记笔数：</label>
-				                                      <div class="col-lg-9 input-group">
-				                                          <input type="password" class="form-control" id="inputPassword1">
-				                                      </div>
-						                                  </div>
-						                                	
-				                                  	</div>
-				                                  	<!--form表单1-->
-				                                  	<div class="panel-body col-sm-6">
-				                             
-						                                  <div class="form-group">
-						                                      <label for="" class="col-lg-3 control-label">授信客户编号：</label>
-						                                      <div class="col-lg-9">
-						                                          <input type="text" class="form-control" id="inputEmail1">
-						                                      </div>
-						                                  </div>
-						                                  <div class="form-group">
-					                                      <label for="" class="col-lg-3 control-label">币种:</label>
-					                                      <div class="col-lg-9">
-					                                          <input type="text" class="form-control" id="inputPassword1">
-					                                      </div>
-						                                  </div>
-						                                  <div class="form-group">
-					                                       <label for="" class="col-lg-3 control-label">发票登记金额:</label>
-					                                      <div class="col-lg-9">
-					                                          <input type="text" class="form-control" id="inputPassword1">
-					                                      </div>
-						                                  </div>
-						                                  </div>
-				                                  		
+		                                 		<div id="form2">
+		                                 			<form-temp :inputs="form2Inputs" :width="form2Width"></form-temp>
+		                                 		</div>
 				                                  	<!--表格 div-->
 				                               			 <div>
-                               			 	 <div id="toolbar" class="btn-group">
+                               			 	 <div id="toolbar2" class="btn-group">
 															            <button id="btn_add" type="button" class="btn btn-myBlue">
 															                <span class="glyphicon glyphicon-plus" aria-hidden="true"></span>新增
 															            </button>
@@ -386,50 +228,56 @@
                                           </div>
                                       </div>
                                   </fieldset>-->
-                                  <fieldset title="结果页" class="step" id="default-step-2" >
+                                  <fieldset title="预览" class="step" id="default-step-2" >
                                       <legend> </legend>
-                                      <div class="form-group">
-                                          <label class="col-lg-3 control-label">登记流水号</label>
+                                      <div class="col-lg-6">
+                                      	  <div class="form-group">
+                                          <label class="col-lg-3 control-label">登记流水号：</label>
                                           <div class="col-lg-9">
                                               <p class="form-control-static">Trf04438</p>
                                           </div>
                                       </div>
                                      <div class="form-group">
-                                          <label class="col-lg-3 control-label">授信客户编号</label>
+                                          <label class="col-lg-3 control-label">授信客户编号：</label>
                                           <div class="col-lg-9">
                                               <p class="form-control-static">Fac02848</p>
                                           </div>
                                       </div>
                                        <div class="form-group">
-                                          <label class="col-lg-3 control-label">授信客户名称</label>
+                                          <label class="col-lg-3 control-label">授信客户名称：</label>
                                           <div class="col-lg-9">
                                               <p class="form-control-static">大大实业公司</p>
                                           </div>
                                       </div>
-                                      <div class="form-group">
-                                          <label class="col-lg-3 control-label">币种</label>
+                                      
+                                      </div>
+                                    	<div class="col-lg-6">
+                                    		<div class="form-group">
+                                          <label class="col-lg-3 control-label">币种：</label>
                                           <div class="col-lg-9">
                                               <p class="form-control-static">CNY</p>
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label class="col-lg-3 control-label">发票登记笔数</label>
+                                          <label class="col-lg-3 control-label">发票登记笔数：</label>
                                           <div class="col-lg-9">
                                               <p class="form-control-static">0</p>
                                           </div>
                                       </div>
                                       <div class="form-group">
-                                          <label class="col-lg-3 control-label">发票登记金额</label>
+                                          <label class="col-lg-3 control-label">发票登记金额：</label>
                                           <div class="col-lg-9">
                                               <p class="form-control-static">10000.00</p>
                                           </div>
                                       </div>
-                                        	<!--表格 div-->
+                                        	
+                                    	</div>
+                                    		
+                                   	<!--表格 div-->
                                			 	<table id="tb3"></table>
                                   </fieldset>
-                                  <input type="submit" class="finish btn btn-danger" value="打印"/>
+                                  <input type="submit" onclick="window.print();" class="finish btn btn-danger Noprint" value="打印"/>
                               </form>
-                          </div>
                       </section>
                   </div>
               </div>
@@ -449,57 +297,13 @@
       </div>
       <div class="modal-body">
            	<!--form表单-->
-           	<form class="form-horizontal">
-           		<!--form表单2-->
-          	<div class="panel-body col-sm-6">
-          		<div class="form-group">
-                      <label for="" class="col-lg-6 control-label">登记流水号：</label>
-                      <div class="col-lg-6 input-group">
-                          <input type="email" class="form-control" id="inputEmail1">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                      <label for="" class="col-lg-6 control-label">授信客户名称：</label>
-                      <div class="col-lg-6 input-group">
-                          <input type="email" class="form-control" id="inputEmail1">
-                      </div>
-                  </div>
-                  <div class="form-group">
-              <label for="" class="col-lg-6 control-label">发票登记笔数：</label>
-              <div class="col-lg-6 input-group">
-                  <input type="password" class="form-control" id="inputPassword1">
-              </div>
-                  </div>
-                	
-          	</div>
-          	<!--form表单1-->
-          	<div class="panel-body col-sm-6">
-     
-                  <div class="form-group">
-                      <label for="" class="col-lg-6 control-label">授信客户编号：</label>
-                      <div class="col-lg-6">
-                          <input type="text" class="form-control" id="inputEmail1">
-                      </div>
-                  </div>
-                  <div class="form-group">
-                  <label for="" class="col-lg-6 control-label">币种:</label>
-                  <div class="col-lg-6">
-                      <input type="text" class="form-control" id="inputPassword1">
-                  </div>
-                  </div>
-                  <div class="form-group">
-                   <label for="" class="col-lg-6 control-label">发票登记金额:</label>
-                  <div class="col-lg-6">
-                      <input type="text" class="form-control" id="inputPassword1">
-                  </div>
-                  </div>
-                  </div>
-				                                  		
+           	<form class="form-horizontal" id="form">
+          		<form-temp :inputs="inputs" :width="width"></form-temp>                             		
            	</form>
           						
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+        <button type="button" class="btn btn-default1" data-dismiss="modal">关闭</button>
         <button type="button" class="btn btn-info">保存</button>
       </div>
     </div>
@@ -524,21 +328,371 @@
     <!-- 7、页面Js文件的引用    -->
     <script src="../js/index.js"></script>
     <!-- Metis Menu Js -->
+   
     <script src="../js/jquery.metisMenu.js"></script>
 		<script src="../js/custom-scripts.js"></script>
+		<script type="text/x-template" id="ol">
+				<ol class="breadcrumb">
+				  <li style="color: #667FA0;">{{ol[0]}}</li>
+				  <li v-if="ol.length==3" style="color: #667FA0;">{{ol[1]}}</li>
+				  <li  class="active">{{ol.length==3?ol[2]:ol[1]}}</li>
+				</ol>
+		</script>
+		<script>
+			Vue.component('ol-tem', {
+		  template: '#ol',
+		  props: {
+		  	ol:Array
+		  },
+		  data:{
+		  	
+		  }
+		});  
+		var data = [];
+		data.push(getParam('name1'));
+		data.push(getParam('name2'));
+		if(getParam('name3')!=""){
+			data.push(getParam('name3'));
+		}
+		var olVm = new Vue({
+								el: '#olHead',
+								data:{
+									ol:data
+								}
+							});
+		</script>
 		
+		
+		 <!--<script type="text/x-template" id="nav">
+	         <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
+	            <div class="sidebar-collapse">
+	                <ul class="nav" id="main-menu">
+	
+	                    <li>
+	                        <a class="active-menu" href="home.html"><i class="fa fa-dashboard"></i> 首页</a>
+	                    </li>
+	                    <li v-for="key in yu">
+	                    	<a href="{{key.url}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
+	                    		<ul v-if="key.children != undefined" class="nav nav-second-level">
+	                    			<li v-for="ke in key.children">
+	                    				 <a href="{{ke.url}}"><i v-if="ke.children!=undefined" class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
+                            	 <ul v-if="ke.children!=undefined" class="nav nav-third-level">
+                            	 	<li v-for="k in ke.children">
+                            	 		<a href="{{k.url}}">{{k.name}}</a>
+                            	 	</li>	
+                            	 </ul>
+                            </li>
+	                    		</ul>
+	                    </li>
+	                    
+	                </ul>
+	
+	            </div>
+	
+	        </nav>
+	         	
+  </script>
+  <script type="text/javascript">
+		Vue.component('nav-tem', {
+		  template: '#nav',
+		  props: {
+		  	yu:Array
+		  }
+		}); 
+		var testData = [{
+							url:'form_wizard.html?name="申请"',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name="复核"',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name="在途"',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name="处理"',
+							name:'处理'
+						}];
+		
+		var datay = [{
+			url:'#',
+			icon:'icon-group',
+			name:'客户管理',
+			children:[{
+				url:'form_wizard.html?name="新增"',
+				name:'新增'
+			},{
+				url:'form_wizard.html?name="修改"',
+				name:'修改'
+			},{
+				url:'form_wizard.html?name="查询"',
+				name:'查询'
+			},{
+				url:'form_wizard.html?name="删除"',
+				name:'删除'
+			}]},
+			{
+				url:'#',
+				icon:'icon-briefcase',
+				name:'国内单笔保理',
+				children:[{
+					url:'#',
+					icon:'icon-pencil',
+					name:'登记',
+					children:testData
+				},{
+					url:'#',
+					icon:'icon-mail-forward',
+					name:'转让',
+					children:[{
+							url:'form_wizard.html?name="申请"',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name="复核"',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name="在途"',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name="处理"',
+							name:'处理'
+						}]
+				},{
+					url:'#',
+					icon:'icon-cny',
+					name:'融资',
+					children:[{
+							url:'form_wizard.html?name="申请"',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name="复核"',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name="在途"',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name="处理"',
+							name:'处理'
+						}]
+				},{
+					url:'#',
+					icon:'icon-credit-card',
+					name:'付款',
+					children:[{
+							url:'form_wizard.html?name="申请"',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name="复核"',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name="在途"',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name="处理"',
+							name:'处理'
+						}]
+				},]
+				},
+				{
+					url:'barPage.html',
+					icon:'icon-bar-chart',
+					name:'报表',
+				}
+		];
+		var vm = new Vue({
+								el: '#yu',
+								data:{
+									yu:datay
+								}
+							});
+  </script>
+  -->
+		
+		<script type="text/x-template" id="p-template">
+			<div class="col-lg-6">
+				<div class="form-group" v-for=" cell in cellsLeft">
+          <label class="col-lg-3 control-label"{{cell.name}}：</label>
+          <div class="col-lg-9">
+              <p class="form-control-static">{{cell.value}}</p>
+          </div>
+      	</div>
+			</div>
+			<div class="col-lg-6">
+				<div class="form-group" v-for=" cell in cellsRight">
+          <label class="col-lg-3 control-label"{{cell.name}}：</label>
+          <div class="col-lg-9">
+              <p class="form-control-static">{{cell.value}}</p>
+          </div>
+      	</div>
+			</div>
+		</script>
+		<script type="text/x-template" id="userName-template">
+			 <!--search & user info start-->
+                <ul class="nav pull-right top-menu">
+                    <li class="dropdown">
+                        <a data-toggle="dropdown" id="nameA" class="dropdown-toggle" href="#" data-toggle="dropdown">
+                            <span class="username">小明</span>
+                            <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu extended logout" role="menu">
+                            <div class="log-arrow-up"></div>
+                            <li><a href="login.html"><i class="icon-key"></i> Log Out</a></li>
+                        </ul>
+                    </li>
+                </ul>
+		</script>
+		<script>
+			Vue.component('user-name',{
+				template:'#userName-template'
+			});
+			var userName = new Vue({
+				el : '#userName'
+			});
+		</script>
+		<script>
+			var data = [{
+				name:'21',
+				valaue:'33'
+			},{
+				name:'21',
+				valaue:'33'
+			},{
+				name:'21',
+				valaue:'33'
+			},{
+				name:'21',
+				valaue:'33'
+			},{
+				name:'21',
+				valaue:'33'
+			}];
+			Vue.component('p-temp', {
+				  template: '#p-template',
+				  props: {
+				    inputs: Array
+				  },
+				  data:function(){
+				  	var half = this.inputs.length/2+(this.inputs.length%2!=0?1:0);
+				  	return{
+				  		cellsLeft:this.inputs.slice(0,half),
+				  		cellsRight:this.inputs.slice(half,this.inputs.length)
+				  	}
+				  }
+			});
+			var p = new Vue({
+				  el: '#p',
+				  data: {
+				  	inputs : data
+				  	
+				  }
+				});
+		</script>
+		<script type="text/x-template" id="form-template">
+   					<!--form表单2-->
+			  	<!--form表单1-->
+			  	<div class="panel-body col-sm-6">
+              <div v-for="cell in formLeft" class="form-group">
+			              <label for="{{cell.name}}" class="{{labelWidth}} control-label">{{cell.label}}</label>
+			              <div class="{{inputWidth}}">
+			                  <input type="{{cell.type}}" class="form-control" id="{{cell.name}}" name="{{cell.name}}" value="{{cell.default}}" v-model="{{cell.name}}">
+			              </div>
+		          </div>
+          </div>
+			  	<!--form表单1-->
+			  	<div class="panel-body col-sm-6">
+              <div v-for="cell in formRight" class="form-group">
+			              <label for="{{cell.name}}" class="{{labelWidth}} control-label">{{cell.label}}</label>
+			              <div class="{{inputWidth}}">
+			                  <input type="{{cell.type}}" class="form-control" id="{{cell.name}}" name="{{cell.name}}" value="{{cell.default}}" v-model="{{cell.name}}">
+			              </div>
+		          </div>
+          </div>
+				                       
+		</script>
+  	<script>
+  		var data = [{
+  			name:"name",
+  			label:"授信客户名称",
+  			type:'text',
+  			default:'',
+  			ispalce:true
+  		},
+  		{
+  			name:"name",
+  			label:"授信客户名称",
+  			type:'text',
+  			default:'',
+  			ispalce:true
+  		},
+  		{
+  			name:"name",
+  			label:"授信客户名称",
+  			type:'text',
+  			default:'',
+  			ispalce:true
+  		}];
+  		var data2 = [{
+  			name:"name",
+  			label:"登记流水号",
+  			type:'text',
+  			default:''
+  		},
+  		{
+  			name:"name",
+  			label:"授信客户名称",
+  			type:'text',
+  			default:''
+  		},
+  		{
+  			name:"name",
+  			label:"发票登记笔数",
+  			type:'text',
+  			default:''
+  		},
+  		{
+  			name:"name",
+  			label:"授信客户编号",
+  			type:'text',
+  			default:''
+  		},
+  		{
+  			name:"name",
+  			label:"币种",
+  			type:'text',
+  			default:''
+  		},
+  		{
+  			name:"name",
+  			label:"发票登记金额",
+  			type:'text',
+  			default:''
+  		}];
+  		
+				var form2 = new Vue({
+				  el: '#form2',
+				  data: {
+				  	form2Inputs : data2,
+				  	form2Width : '3'
+				  	
+				  }
+				});
+  	</script>
   <script>
-
       //step wizard
 
       $(function() {
+      		$('.dropdown-toggle').dropdown()
       		$('#searchNoreDiv').hide();
           $('#default').stepy({
               backLabel: '上一步',
               block: true,
               nextLabel: '下一步',
               titleClick: true,
-              titleTarget: '.stepy-tab'
+              titleTarget: '.stepy-tab',
+              next:function(i){
+              	if(i==2){
+              		$('#default-next-1').html('提交')
+              	}
+              }
           });
           createTable('ta');
            createTable('tb3');

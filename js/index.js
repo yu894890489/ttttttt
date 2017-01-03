@@ -6,7 +6,6 @@ $(function () {
 		var a = {"ID":i+"","Name":"好多鱼"+i,"ParentName":"上一条鱼"+i,"Level":i,"Desc":"测试"+i};
 		json.push(a);
 	}
-debugger;
     //2.初始化Table
     var oTable = new TableInit("tb_departments",'toolbar');	
 	oTable.Init(json);
@@ -90,6 +89,9 @@ var TableInit = function (id,toolbarId) {
                 title: '描述'
             }];
     }
+    if(id=='tb_departments'){
+    	toolbarId = 'toolbar2';
+    }
     //初始化Table
     oTableInit.Init = function (json) {
         $('#'+id).bootstrapTable({
@@ -152,3 +154,45 @@ var ButtonInit = function () {
     return oInit;
 };
 
+var objData ={
+	'cust':'客户管理',
+	'add':'新增',
+	'edit':'修改',
+	'del':'删除',
+	'guo':'国内单笔保理',
+	'dengji':'登记',
+	'login':'申请',
+	'again':'复核',
+	'road':'在途',
+	'deal':'处理',
+	'zhuan':'转让',
+	'rong':'融资',
+	'pay':'付款'
+}
+/**
+ * 获取url的参数
+ * @param {Object} paramName
+ */
+function getParam(paramName) {
+    paramValue = "";
+    isFound = false;
+    if (this.location.search.indexOf("?") == 0 && this.location.search.indexOf("=") > 1) {
+        arrSource = unescape(this.location.search).substring(1, this.location.search.length).split("&");
+        i = 0;
+        while (i < arrSource.length && !isFound) {
+            if (arrSource[i].indexOf("=") > 0) {
+                if (arrSource[i].split("=")[0].toLowerCase() == paramName.toLowerCase()) {
+                    paramValue = arrSource[i].split("=")[1];
+                    isFound = true;
+                }
+            }
+            i++;
+        }
+    }
+    $.each(objData, function(i,v) {
+    	if(i==paramValue){
+    		paramValue = v;
+    	}
+    });
+    return paramValue;
+}
