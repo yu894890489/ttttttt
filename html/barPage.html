@@ -159,20 +159,15 @@
 				el : '#userName'
 			});
 		</script>
-		<script>
-			$(function(){
-				$('#mapDiv').height($('#sidebar').height());
-			});
-		</script>
 			<script>
 			$(function(){
-				
+				$('#mapDiv').height($('#sidebar').height());
 				var worldMapContainer = document.getElementById('map1');
 			//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
-			
 			var resizeWorldMapContainer = function () {
 			    worldMapContainer.style.width = $('#map').width()+'px';
-			    worldMapContainer.style.height = $('#map1').height()+'px';
+			    var height = $('#mapDiv').height()/2>200?$('#mapDiv').height()/2:200;
+			    worldMapContainer.style.height = height+'px';
 			};
 			//设置容器高宽
 			resizeWorldMapContainer();
@@ -249,7 +244,8 @@
 			//用于使chart自适应高度和宽度,通过窗体高宽计算容器高宽
   			var resizeWorldMapContainer2 = function () {
 			    worldMapContainer2.style.width = $('#mapLine').width()+'px';
-			    worldMapContainer2.style.height = $('#map2').height()+'px';
+			    var height = $('#mapDiv').height()/2>200?$('#mapDiv').height()/2:200;
+			    worldMapContainer2.style.height = height+'px';
 			};
 			//设置容器高宽
 			resizeWorldMapContainer2();
@@ -317,6 +313,8 @@
 			
 			//用于使chart自适应高度和宽度
 			window.onresize = function () {
+				$('#mapDiv').height($('#sidebar').height());
+				debugger
 			    //重置容器高宽
 			    resizeWorldMapContainer2();
 			    c.resize();
@@ -382,22 +380,22 @@
           	}
       }
   </script>
-   <!--<script type="text/x-template" id="nav">
+ 
+  		 <script type="text/x-template" id="nav">
 	         <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
 	            <div class="sidebar-collapse">
 	                <ul class="nav" id="main-menu">
-	
 	                    <li>
-	                        <a class="active-menu" href="home.html"><i class="fa fa-dashboard"></i> 首页</a>
+	                        <a class="" href="home.html"><i class="icon-home fa fa-dashboard"></i> 首页</a>
 	                    </li>
 	                    <li v-for="key in yu">
-	                    	<a href="{{key.url}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
+	                    	<a href="{{key.url}}" id="{{key.id}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
 	                    		<ul v-if="key.children != undefined" class="nav nav-second-level">
 	                    			<li v-for="ke in key.children">
-	                    				 <a href="{{ke.url}}"><i v-if="ke.children!=undefined" class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
+	                    				 <a href="{{ke.url}}" id="{{ke.id}}"><i  class="{{ke.icon}}"></i> {{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
                             	 <ul v-if="ke.children!=undefined" class="nav nav-third-level">
                             	 	<li v-for="k in ke.children">
-                            	 		<a href="{{k.url}}">{{k.name}}</a>
+                            	 		<a href="{{k.url}}" id="{{k.id}}"><i></i> {{k.name}}</a>
                             	 	</li>	
                             	 </ul>
                             </li>
@@ -412,111 +410,139 @@
 	         	
   </script>
   <script type="text/javascript">
+  //注册组件
 		Vue.component('nav-tem', {
 		  template: '#nav',
 		  props: {
 		  	yu:Array
 		  }
 		}); 
-		var testData = [{
-							url:'form_wizard.html?name="申请"',
-							name:'申请'
-						},{
-							url:'form_wizard.html?name="复核"',
-							name:'复核'
-						},{
-							url:'form_wizard.html?name="在途"',
-							name:'在途'
-						},{
-							url:'form_wizard.html?name="处理"',
-							name:'处理'
-						}];
-		
+		//数据
 		var datay = [{
 			url:'#',
 			icon:'icon-group',
 			name:'客户管理',
+			id:'a',
 			children:[{
-				url:'form_wizard.html?name="新增"',
-				name:'新增'
+				url:'form_wizard.html?name1=cust&name2=add&id=a1',
+				name:'新增',
+				id:'a1'
 			},{
-				url:'form_wizard.html?name="修改"',
-				name:'修改'
+				url:'form_wizard.html?name1=cust&name2=edit&id=a2',
+				name:'修改',
+				id:'a2'
 			},{
-				url:'form_wizard.html?name="查询"',
-				name:'查询'
+				url:'form_wizard.html?name1=cust&name2=query&id=a3',
+				name:'查询',
+				id:'a3'
 			},{
-				url:'form_wizard.html?name="删除"',
-				name:'删除'
+				url:'form_wizard.html?name1=cust&name2=del&id=a3',
+				name:'删除',
+				id:'a4'
 			}]},
 			{
 				url:'#',
 				icon:'icon-briefcase',
 				name:'国内单笔保理',
+				id:'b',
 				children:[{
 					url:'#',
 					icon:'icon-pencil',
 					name:'登记',
-					children:testData
+					id:'b1',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=login&id=b11',
+							name:'申请',
+							id:'b11'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=again&id=b12',
+							name:'复核',
+							id:'b12'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=road&id=b13',
+							name:'在途',
+							id:'b13'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=deal&id=b14',
+							name:'处理',
+							id:'b14'
+						}]
 				},{
 					url:'#',
 					icon:'icon-mail-forward',
 					name:'转让',
+					id:'b2',
 					children:[{
-							url:'form_wizard.html?name="申请"',
-							name:'申请'
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=login&id=b21',
+							name:'申请',
+							id:'b21'
 						},{
-							url:'form_wizard.html?name="复核"',
-							name:'复核'
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=again&id=b22',
+							name:'复核',
+							id:'b22'
 						},{
-							url:'form_wizard.html?name="在途"',
-							name:'在途'
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=road&id=b23',
+							name:'在途',
+							id:'b23'
 						},{
-							url:'form_wizard.html?name="处理"',
-							name:'处理'
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=deal&id=b24',
+							name:'处理',
+							id:'b24'
 						}]
 				},{
 					url:'#',
 					icon:'icon-cny',
 					name:'融资',
+					id:'b3',
 					children:[{
-							url:'form_wizard.html?name="申请"',
-							name:'申请'
+							url:'form_wizard.html?name1=guo&name2=rong&name3=login&id=b31',
+							name:'申请',
+							id:'b31'
 						},{
-							url:'form_wizard.html?name="复核"',
-							name:'复核'
+							url:'form_wizard.html?name1=guo&name2=rong&name3=again&id=b32',
+							name:'复核',
+							id:'b32'
 						},{
-							url:'form_wizard.html?name="在途"',
-							name:'在途'
+							url:'form_wizard.html?name1=guo&name2=rong&name3=road&id=b33',
+							name:'在途',
+							id:'b33'
 						},{
-							url:'form_wizard.html?name="处理"',
-							name:'处理'
+							url:'form_wizard.html?name1=guo&name2=rong&name3=deal&id=b34',
+							name:'处理',
+							id:'b34'
 						}]
 				},{
 					url:'#',
 					icon:'icon-credit-card',
 					name:'付款',
+					id:'b4',
 					children:[{
-							url:'form_wizard.html?name="申请"',
-							name:'申请'
+							url:'form_wizard.html?name1=guo&name2=pay&name3=login&id=b41',
+							name:'申请',
+							id:'b41'
 						},{
-							url:'form_wizard.html?name="复核"',
-							name:'复核'
+							url:'form_wizard.html?name1=guo&name2=pay&name3=again&id=b42',
+							name:'复核',
+							id:'b42'
 						},{
-							url:'form_wizard.html?name="在途"',
-							name:'在途'
+							url:'form_wizard.html?name1=guo&name2=pay&name3=road&id=b43',
+							name:'在途',
+							id:'b43'
 						},{
-							url:'form_wizard.html?name="处理"',
-							name:'处理'
+							url:'form_wizard.html?name1=guo&name2=pay&name3=deal&id=b44',
+							name:'处理',
+							id:'b44'
 						}]
-				},]
+				}]
 				},
 				{
-					url:'barPage.html',
+					url:'barPage.html?name1="报表"&name2="展示"',
 					icon:'icon-bar-chart',
 					name:'报表',
+					id:'c'
 				}
 		];
+		//初始化
 		var vm = new Vue({
 								el: '#yu',
 								data:{
@@ -524,6 +550,12 @@
 								}
 							});
   </script>
-  -->
+
+  <script>
+  $(function(){
+  	$('.dropdown-toggle').dropdown();
+  });
+  </script>
+   
   </body>
 </html>

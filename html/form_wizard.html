@@ -167,7 +167,7 @@
                                   <fieldset title="业务" class="step" id="default-step-1" >
                                       <legend> </legend>
                                  
-		                                 		<div id="form2">
+		                                 		<div id="form2" class="col-lg-12">
 		                                 			<form-temp :inputs="form2Inputs" :width="form2Width"></form-temp>
 		                                 		</div>
 				                                  	<!--表格 div-->
@@ -289,18 +289,17 @@
 
 <!--新增的弹出-->
 <div class="modal fade"  id="addModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" onscroll="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog" style="width: 70%;">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
         <h4 class="modal-title" id="myModalLabel"><span style="font-size: 14px;display: block;margin-bottom: 7px;margin-left: 10px">新增</span></h4>
       </div>
-      <div class="modal-body">
+      <div class="modal-body col-lg-12">
            	<!--form表单-->
            	<form class="form-horizontal" id="form">
           		<form-temp :inputs="inputs" :width="width"></form-temp>                             		
            	</form>
-          						
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default1" data-dismiss="modal">关闭</button>
@@ -363,22 +362,22 @@
 		</script>
 		
 		
-		 <!--<script type="text/x-template" id="nav">
+		 <script type="text/x-template" id="nav">
 	         <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
 	            <div class="sidebar-collapse">
 	                <ul class="nav" id="main-menu">
 	
 	                    <li>
-	                        <a class="active-menu" href="home.html"><i class="fa fa-dashboard"></i> 首页</a>
+	                        <a class="" href="home.html"><i class="icon-home fa fa-dashboard"></i> 首页</a>
 	                    </li>
 	                    <li v-for="key in yu">
-	                    	<a href="{{key.url}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
+	                    	<a href="{{key.url}}" id="{{key.id}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
 	                    		<ul v-if="key.children != undefined" class="nav nav-second-level">
 	                    			<li v-for="ke in key.children">
-	                    				 <a href="{{ke.url}}"><i v-if="ke.children!=undefined" class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
+	                    				 <a href="{{ke.url}}" id="{{ke.id}}"><i  class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
                             	 <ul v-if="ke.children!=undefined" class="nav nav-third-level">
                             	 	<li v-for="k in ke.children">
-                            	 		<a href="{{k.url}}">{{k.name}}</a>
+                            	 		<a href="{{k.url}}" id="{{k.id}}"><i></i>{{k.name}}</a>
                             	 	</li>	
                             	 </ul>
                             </li>
@@ -399,105 +398,131 @@
 		  	yu:Array
 		  }
 		}); 
-		var testData = [{
-							url:'form_wizard.html?name="申请"',
-							name:'申请'
-						},{
-							url:'form_wizard.html?name="复核"',
-							name:'复核'
-						},{
-							url:'form_wizard.html?name="在途"',
-							name:'在途'
-						},{
-							url:'form_wizard.html?name="处理"',
-							name:'处理'
-						}];
-		
 		var datay = [{
 			url:'#',
 			icon:'icon-group',
 			name:'客户管理',
+			id:'a',
 			children:[{
-				url:'form_wizard.html?name="新增"',
-				name:'新增'
+				url:'form_wizard.html?name1=cust&name2=add&id=a1',
+				name:'新增',
+				id:'a1'
 			},{
-				url:'form_wizard.html?name="修改"',
-				name:'修改'
+				url:'form_wizard.html?name1=cust&name2=edit&id=a2',
+				name:'修改',
+				id:'a2'
 			},{
-				url:'form_wizard.html?name="查询"',
-				name:'查询'
+				url:'form_wizard.html?name1=cust&name2=query&id=a3',
+				name:'查询',
+				id:'a3'
 			},{
-				url:'form_wizard.html?name="删除"',
-				name:'删除'
+				url:'form_wizard.html?name1=cust&name2=del&id=a3',
+				name:'删除',
+				id:'a4'
 			}]},
 			{
 				url:'#',
 				icon:'icon-briefcase',
 				name:'国内单笔保理',
+				id:'b',
 				children:[{
 					url:'#',
 					icon:'icon-pencil',
 					name:'登记',
-					children:testData
+					id:'b1',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=login&id=b11',
+							name:'申请',
+							id:'b11'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=again&id=b12',
+							name:'复核',
+							id:'b12'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=road&id=b13',
+							name:'在途',
+							id:'b13'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=deal&id=b14',
+							name:'处理',
+							id:'b14'
+						}]
 				},{
 					url:'#',
 					icon:'icon-mail-forward',
 					name:'转让',
+					id:'b2',
 					children:[{
-							url:'form_wizard.html?name="申请"',
-							name:'申请'
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=login&id=b21',
+							name:'申请',
+							id:'b21'
 						},{
-							url:'form_wizard.html?name="复核"',
-							name:'复核'
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=again&id=b22',
+							name:'复核',
+							id:'b22'
 						},{
-							url:'form_wizard.html?name="在途"',
-							name:'在途'
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=road&id=b23',
+							name:'在途',
+							id:'b23'
 						},{
-							url:'form_wizard.html?name="处理"',
-							name:'处理'
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=deal&id=b24',
+							name:'处理',
+							id:'b24'
 						}]
 				},{
 					url:'#',
 					icon:'icon-cny',
 					name:'融资',
+					id:'b3',
 					children:[{
-							url:'form_wizard.html?name="申请"',
-							name:'申请'
+							url:'form_wizard.html?name1=guo&name2=rong&name3=login&id=b31',
+							name:'申请',
+							id:'b31'
 						},{
-							url:'form_wizard.html?name="复核"',
-							name:'复核'
+							url:'form_wizard.html?name1=guo&name2=rong&name3=again&id=b32',
+							name:'复核',
+							id:'b32'
 						},{
-							url:'form_wizard.html?name="在途"',
-							name:'在途'
+							url:'form_wizard.html?name1=guo&name2=rong&name3=road&id=b33',
+							name:'在途',
+							id:'b33'
 						},{
-							url:'form_wizard.html?name="处理"',
-							name:'处理'
+							url:'form_wizard.html?name1=guo&name2=rong&name3=deal&id=b34',
+							name:'处理',
+							id:'b34'
 						}]
 				},{
 					url:'#',
 					icon:'icon-credit-card',
 					name:'付款',
+					id:'b4',
 					children:[{
-							url:'form_wizard.html?name="申请"',
-							name:'申请'
+							url:'form_wizard.html?name1=guo&name2=pay&name3=login&id=b41',
+							name:'申请',
+							id:'b41'
 						},{
-							url:'form_wizard.html?name="复核"',
-							name:'复核'
+							url:'form_wizard.html?name1=guo&name2=pay&name3=again&id=b42',
+							name:'复核',
+							id:'b42'
 						},{
-							url:'form_wizard.html?name="在途"',
-							name:'在途'
+							url:'form_wizard.html?name1=guo&name2=pay&name3=road&id=b43',
+							name:'在途',
+							id:'b43'
 						},{
-							url:'form_wizard.html?name="处理"',
-							name:'处理'
+							url:'form_wizard.html?name1=guo&name2=pay&name3=deal&id=b44',
+							name:'处理',
+							id:'b44'
 						}]
-				},]
+				}]
 				},
 				{
-					url:'barPage.html',
+					url:'barPage.html?name1="报表"&name2="展示"',
 					icon:'icon-bar-chart',
 					name:'报表',
+					id:'c'
 				}
 		];
+
 		var vm = new Vue({
 								el: '#yu',
 								data:{
@@ -505,7 +530,7 @@
 								}
 							});
   </script>
-  -->
+
 		
 		<script type="text/x-template" id="p-template">
 			<div class="col-lg-6">
@@ -610,68 +635,78 @@
 		</script>
   	<script>
   		var data = [{
-  			name:"name",
-  			label:"授信客户名称",
-  			type:'text',
-  			default:'',
-  			ispalce:true
-  		},
-  		{
-  			name:"name",
-  			label:"授信客户名称",
-  			type:'text',
-  			default:'',
-  			ispalce:true
-  		},
-  		{
-  			name:"name",
-  			label:"授信客户名称",
-  			type:'text',
-  			default:'',
-  			ispalce:true
-  		}];
-  		var data2 = [{
-  			name:"name",
+  			name:"name1",
   			label:"登记流水号",
-  			type:'text',
-  			default:''
+  			type:'text'
   		},
   		{
-  			name:"name",
+  			name:"name2",
   			label:"授信客户名称",
-  			type:'text',
-  			default:''
+  			type:'text'
   		},
   		{
-  			name:"name",
+  			name:"name3",
+  			label:"授信客户编号",
+  			type:'text'
+  		},{
+  			name:"name4",
+  			label:"授信客户编号",
+  			type:'text'
+  		},
+  		{
+  			name:"name5",
+  			label:"币种",
+  			type:'text'
+  		},
+  		{
+  			name:"name6",
   			label:"发票登记笔数",
-  			type:'text',
-  			default:''
+  			type:'text'
   		},
   		{
   			name:"name",
   			label:"授信客户编号",
-  			type:'text',
-  			default:''
+  			type:'text'
   		},
   		{
   			name:"name",
   			label:"币种",
-  			type:'text',
-  			default:''
+  			type:'text'
   		},
   		{
   			name:"name",
   			label:"发票登记金额",
-  			type:'text',
-  			default:''
+  			type:'text'
   		}];
-  		
+  			Vue.component('form-temp', {
+				  template: '#form-template',
+				  props: {
+				    inputs: Array,
+				    width:String
+				  },
+				  data:function() {
+				  	var half = this.inputs.length/2+(this.inputs.length%2!=0?1:0);
+				  	return {
+				  		formLeft : this.inputs.slice(0,half),
+				  		formRight : this.inputs.slice(half,this.inputs.length),
+				  		labelWidth: 'col-lg-'+this.width,
+				  		inputWidth: 'col-lg-'+(12-parseInt(this.width))
+				  	}
+				  }
+				});
 				var form2 = new Vue({
 				  el: '#form2',
 				  data: {
-				  	form2Inputs : data2,
+				  	form2Inputs : data,
 				  	form2Width : '3'
+				  	
+				  }
+				});
+				var form = new Vue({
+				  el: '#form',
+				  data: {
+				  	inputs : data,
+				  	width : '3'
 				  	
 				  }
 				});
@@ -702,6 +737,9 @@
           $('#btn_add').on('click',function(){
           	$('#addModal').modal();
           });
+          $('#btn_edit').on('click',function(){
+          	$('#addModal').modal();
+          })
           $('#searchContent').on('click',function(){
           	seachCust();
           });
@@ -709,8 +747,11 @@
           $('#searchMore').on('click',function(){
           	changeSearchStyle()
           });
+          
+          //展开nav
+          openNav();
       });
-      
+     
       
       /**
        * 查询的弹出窗口

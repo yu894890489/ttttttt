@@ -186,7 +186,7 @@ a, a:hover, a:focus {
     width: 180px;
     height: 100%;
     position: fixed;
-    background: #3e3f3a;
+    background: #333;
 }
 
 .nav-collapse.collapse {
@@ -273,9 +273,13 @@ ul.sidebar-menu li a{
     -ms-transition: all 0.3s ease;
     transition: all 0.3s ease;
 }
-
-ul.sidebar-menu li.active a, ul.sidebar-menu li a:hover, ul.sidebar-menu li a:focus {
-    background: #35404d;
+/*#main-menu li.active a, 
+*/
+.cuHover{
+	background: #1B1B1B !important;
+}
+#main-menu li a:hover, #main-menu li a:focus {
+    background: #1B1B1B;
     color: #fff;
     display: block;
     border-radius: 4px;
@@ -301,7 +305,9 @@ ul#main-menu li a:hover i, ul#main-menu li a:focus i {
 ul.sidebar-menu li.active a i {
     color: #FF6C60;
 }
-
+/*#sidebar .nav a:hover{
+	background-color: #1B1B1B !important;
+}*/
 
 /*#sidebar ul > li > a .arrow {
     border-bottom: 4px solid transparent;
@@ -369,7 +375,10 @@ ul.sidebar-menu li.active a i {
     right: 0;
     z-index: 1002;
 }
-
+.white-bg-top-border{
+	background: #fff;
+	border-top:1px solid #ddd;
+}
 .white-bg {
     background: #fff;
     border-bottom: 1px solid #f1f2f7;

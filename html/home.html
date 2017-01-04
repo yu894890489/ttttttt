@@ -159,22 +159,22 @@
 										      	<div class="wrapper">
 						<ul class="timeLine">
 							<li>
-								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=dengji&name3=login">
+								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=dengji&name3=login&id=b11">
 									<button  class="btn btn-radius btn-info" ><i class="icon-pencil" style="font-size: 25px;"></i></button><br/>登记</a></h5>
 							</li>
 							<li>
-								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=zhuan&name3=login">
+								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=zhuan&name3=login&id=b21">
 									<button class="btn btn-radius btn-info" >
 										<i class="icon-mail-forward" style="font-size: 25px;"></i></button><br/>转让</h5>
 								</a>
 							</li>
 							<li>
-								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=rong&name3=login">
+								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=rong&name3=login&id=b31">
 									<button class="btn btn-radius btn-info" ><i class="icon-cny" style="font-size: 25px;"></i></button><br/>融资</h5>
 								</a>
 							</li>
 							<li>
-								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=pay&name3=login">
+								<h5 class="time"><a href="form_wizard.html?name1=guo&name2=pay&name3=login&id=b41">
 									<button class="btn btn-radius btn-info" ><i class="icon-credit-card" style="font-size: 25px;"></i></button><br/>付款</h5>
 								</a>
 							</li>
@@ -240,6 +240,10 @@
           </section>
       <!--main content end-->
   </section>
+  </section>
+   <div class="white-bg-top-border text-center footer" >
+      	<div style="margin-top: 20px"><strong>版权所有</strong>©2016南京信雅达友田信息技术有限公司</div>
+      </div>
   <!-- js placed at the end of the document so the pages load faster -->
     <script src="../js/jquery.js"></script>
     <script src="../js/bootstrap.min.js"></script>
@@ -341,12 +345,292 @@
           	}
       }
   </script>
+ <script type="text/x-template" id="nav">
+	         <nav id="sidebar" class="navbar-default navbar-side" role="navigation">
+	            <div class="sidebar-collapse">
+	                <ul class="nav" id="main-menu">
+	
+	                    <li>
+	                        <a class="" href="home.html"><i class="icon-home fa fa-dashboard"></i> 首页</a>
+	                    </li>
+	                    <li v-for="key in yu">
+	                    	<a href="{{key.url}}" id="{{key.id}}"><i class="{{key.icon}} fa fa-desktop"></i> {{key.name}}<span class="fa arrow"></span></a>
+	                    		<ul v-if="key.children != undefined" class="nav nav-second-level">
+	                    			<li v-for="ke in key.children">
+	                    				 <a href="{{ke.url}}" id="{{ke.id}}"><i  class="{{ke.icon}}"></i>{{ke.name}}<span v-if="ke.children!=undefined" class="fa arrow"></span></a>
+                            	 <ul v-if="ke.children!=undefined" class="nav nav-third-level">
+                            	 	<li v-for="k in ke.children">
+                            	 		<a href="{{k.url}}" id="{{k.id}}"><i></i>{{k.name}}</a>
+                            	 	</li>	
+                            	 </ul>
+                            </li>
+	                    		</ul>
+	                    </li>
+	                    
+	                </ul>
+	
+	            </div>
+	
+	        </nav>
+	         	
+  </script>
+  <script type="text/javascript">
+		Vue.component('nav-tem', {
+		  template: '#nav',
+		  props: {
+		  	yu:Array
+		  }
+		}); 
+		var datay = [{
+			url:'#',
+			icon:'icon-group',
+			name:'客户管理',
+			id:'a',
+			children:[{
+				url:'form_wizard.html?name1=cust&name2=add&id=a1',
+				name:'新增',
+				id:'a1'
+			},{
+				url:'form_wizard.html?name1=cust&name2=edit&id=a2',
+				name:'修改',
+				id:'a2'
+			},{
+				url:'form_wizard.html?name1=cust&name2=query&id=a3',
+				name:'查询',
+				id:'a3'
+			},{
+				url:'form_wizard.html?name1=cust&name2=del&id=a3',
+				name:'删除',
+				id:'a4'
+			}]},
+			{
+				url:'#',
+				icon:'icon-briefcase',
+				name:'国内单笔保理',
+				id:'b',
+				children:[{
+					url:'#',
+					icon:'icon-pencil',
+					name:'登记',
+					id:'b1',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=login&id=b11',
+							name:'申请',
+							id:'b11'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=again&id=b12',
+							name:'复核',
+							id:'b12'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=road&id=b13',
+							name:'在途',
+							id:'b13'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=deal&id=b14',
+							name:'处理',
+							id:'b14'
+						}]
+				},{
+					url:'#',
+					icon:'icon-mail-forward',
+					name:'转让',
+					id:'b2',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=login&id=b21',
+							name:'申请',
+							id:'b21'
+						},{
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=again&id=b22',
+							name:'复核',
+							id:'b22'
+						},{
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=road&id=b23',
+							name:'在途',
+							id:'b23'
+						},{
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=deal&id=b24',
+							name:'处理',
+							id:'b24'
+						}]
+				},{
+					url:'#',
+					icon:'icon-cny',
+					name:'融资',
+					id:'b3',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=rong&name3=login&id=b31',
+							name:'申请',
+							id:'b31'
+						},{
+							url:'form_wizard.html?name1=guo&name2=rong&name3=again&id=b32',
+							name:'复核',
+							id:'b32'
+						},{
+							url:'form_wizard.html?name1=guo&name2=rong&name3=road&id=b33',
+							name:'在途',
+							id:'b33'
+						},{
+							url:'form_wizard.html?name1=guo&name2=rong&name3=deal&id=b34',
+							name:'处理',
+							id:'b34'
+						}]
+				},{
+					url:'#',
+					icon:'icon-credit-card',
+					name:'付款',
+					id:'b4',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=pay&name3=login&id=b41',
+							name:'申请',
+							id:'b41'
+						},{
+							url:'form_wizard.html?name1=guo&name2=pay&name3=again&id=b42',
+							name:'复核',
+							id:'b42'
+						},{
+							url:'form_wizard.html?name1=guo&name2=pay&name3=road&id=b43',
+							name:'在途',
+							id:'b43'
+						},{
+							url:'form_wizard.html?name1=guo&name2=pay&name3=deal&id=b44',
+							name:'处理',
+							id:'b44'
+						}]
+				}]
+				},
+				{
+					url:'barPage.html?name1="报表"&name2="展示"',
+					icon:'icon-bar-chart',
+					name:'报表',
+					id:'c'
+				}
+		];
+
+		var vm = new Vue({
+								el: '#yu',
+								data:{
+									yu:datay
+								}
+							});
+  </script>
 
   <script>
   $(function(){
   	$('.dropdown-toggle').dropdown();
   });
   </script>
-  <script src="../js/custom-scripts.js"></script>
+   <!--<script type="text/javascript">
+		Vue.component('nav-tem', {
+		  template: '#nav',
+		  props: {
+		  	yu:Array
+		  }
+		}); 
+		var datay = [{
+			url:'#',
+			icon:'icon-group',
+			name:'客户管理',
+			children:[{
+				url:'form_wizard.html?name1=cust&name2=add',
+				name:'新增'
+			},{
+				url:'form_wizard.html?name1=cust&name2=edit',
+				name:'修改'
+			},{
+				url:'form_wizard.html?name1=cust&name2=query',
+				name:'查询'
+			},{
+				url:'form_wizard.html?name1=cust&name2=del',
+				name:'删除'
+			}]},
+			{
+				url:'#',
+				icon:'icon-briefcase',
+				name:'国内单笔保理',
+				children:[{
+					url:'#',
+					icon:'icon-pencil',
+					name:'登记',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=login',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=again',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=road',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name1=guo&name2=dengji&name3=deal',
+							name:'处理'
+						}]
+				},{
+					url:'#',
+					icon:'icon-mail-forward',
+					name:'转让',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=login',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=again',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=road',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name1=guo&name2=zhuan&name3=deal',
+							name:'处理'
+						}]
+				},{
+					url:'#',
+					icon:'icon-cny',
+					name:'融资',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=rong&name3=login',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name1=guo&name2=rong&name3=again',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name1=guo&name2=rong&name3=road',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name1=guo&name2=rong&name3=deal',
+							name:'处理'
+						}]
+				},{
+					url:'#',
+					icon:'icon-credit-card',
+					name:'付款',
+					children:[{
+							url:'form_wizard.html?name1=guo&name2=pay&name3=login',
+							name:'申请'
+						},{
+							url:'form_wizard.html?name1=guo&name2=pay&name3=again',
+							name:'复核'
+						},{
+							url:'form_wizard.html?name1=guo&name2=pay&name3=road',
+							name:'在途'
+						},{
+							url:'form_wizard.html?name1=guo&name2=pay&name3=deal',
+							name:'处理'
+						}]
+				}]
+				},
+				{
+					url:'barPage.html?name1="报表"&name2="展示"',
+					icon:'icon-bar-chart',
+					name:'报表',
+				}
+		];
+
+		var vm = new Vue({
+								el: '#yu',
+								data:{
+									yu:datay
+								}
+							});
+  </script>-->
+  
   </body>
 </html>

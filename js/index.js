@@ -196,3 +196,16 @@ function getParam(paramName) {
     });
     return paramValue;
 }
+ function openNav(){
+      	debugger;
+      	var id = getParam('id');
+      	for (var i = 0;i<id.length;i++) {
+      		var newId = id.substring(0,i+1);
+      		if(i==id.length-1){
+      			$('#'+newId).addClass('cuHover');
+      		}else{
+      			//$('#'+newId).parent('li').addClass('active');
+      			$('#'+newId).parent('li').toggleClass('active').children('ul').slideToggle().toggleClass('metis-close').toggleClass('metis-open');
+      		}
+      	}
+      }
